@@ -20,10 +20,8 @@ public class Calculator {
 	int divide (int a, int b) { 
 		return a / b;	}
 
-
+	
 	public static void main(String[] args) {
-		System.out.println("류한성");
-
 		//인스턴스 생성 -> 클래스의 정의가 필요 ( 필요한 변수, 필요한 메소드)
 		//클래스이름 참조변수 = new 클래스이름
 		Calculator cal = new Calculator();
