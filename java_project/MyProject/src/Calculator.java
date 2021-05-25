@@ -22,6 +22,7 @@ public class Calculator {
 	double divide (double a, double b) { 
 		return a / b;	}
 
+
 	static int getValue() {
 		Scanner sc = new Scanner(System.in);
 		int inputString = sc.nextInt();
@@ -85,7 +86,7 @@ public class Calculator {
 		System.out.println("계산을 완료하였습니다.");
 		System.out.println("");
 
-
+		
 		Scanner sc = new Scanner(System.in);
 		Calculator calc = new Calculator();
 
