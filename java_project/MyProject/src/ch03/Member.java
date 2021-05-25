@@ -1,23 +1,23 @@
 package ch03;
 
 public class Member {
-	//변수의 기능 1. 데이터를 메모리에 저장 2. 주소의기능
+	//변수의 기능 1. 데이터를 메모리에 저장 2. 주소의 기능
 	String name;
-	String phoneNum;
+	String phoneNo;
 	String major;
 	int grade;
 	String email;
 	String birthday;
 	String address;
 
-	Member(String name, String phonNum,String major,int grade, String email) {
-		this(name, phonNum, major, grade, email, "7월7일", "Tottenham, England");
+	Member(String name, String phonNo,String major,int grade, String email) {
+		this(name, phonNo, major, grade, email, "7월7일", "Tottenham, England");
 	}
 	
-	Member(String name, String phonNum,String major,int grade, String email, String birthday, String address) {
-		this.name= name;
-		this.phoneNum = phonNum;
-		this.major=major;
+	Member(String name, String phonNo, String major, int grade, String email, String birthday, String address) {
+		this.name = name;
+		this.phoneNo = phonNo;
+		this.major = major;
 		this.grade = grade;
 		this.email = email;
 		this.birthday = birthday;
@@ -25,13 +25,13 @@ public class Member {
 	}
 
 	void printInfo() {
-		System.out.println("이름 : "+name);
-		System.out.println("휴대폰번호 : "+phoneNum);
-		System.out.println("전공 : "+major);
-		System.out.println("학년 : "+grade);
-		System.out.println("email : "+email);
-		System.out.println("생일 : "+birthday);
-		System.out.println("주소 : "+address);
+		System.out.println("이름 : " + name);
+		System.out.println("휴대전화 : " + phoneNo);
+		System.out.println("전공 : " + major);
+		System.out.println("학년 : " + grade);
+		System.out.println("이메일 : " + email);
+		System.out.println("생일 : " + birthday);
+		System.out.println("주소 : " + address);
 	}
 
 	public static void main(String[] args) {
