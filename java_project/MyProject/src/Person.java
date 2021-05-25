@@ -1,35 +1,29 @@
-import java.lang.*;
-import java.util.Scanner;
+
+
 
 public class Person {
 	
-	double circumference (double radius) { 
-		return 2 * Math.PI * radius;
-		}
+	String memberName;
+	String phoneNo = "000-0000-0000";
+	String socialId = "701225-0000000";
+	long socialId2 = 7012250000000L;
 	
-	double circleArea (double radius) {
-		return Math.PI * radius * radius;
+	//클래스의 구성 - > 인스턴스 변수, 메소드
+	void showData() {
+		System.out.println("회원 이름 : " + this.memberName);
+		System.out.println("회원 전화 번호 : " + this.phoneNo);
 	}
-
+	
 	
 	public static void main(String[] args) {
-//		String name;
-//		String phoneNo;
-//		int socialId;
+		//Person 인스턴스 생성
+		Person person = new Person();
+		System.out.println("이름 : " + person.memberName);
+//		person.showData(memberName, phoneNo);
+		person.memberName = "손흥민";
+		person.showData();
 		
-		Scanner scn = new Scanner(System.in);
-		Person p = new Person();
-		
-		double circumference, circleArea;
-		System.out.println("원 둘레값을 위한 원의 반지름을 입력해주세요.");
-		circumference = scn.nextDouble();
-		System.out.println("원의 둘레는 " + p.circumference(circumference));
-		System.out.println("==========");
-		System.out.println("원 넓이값을 위한 원의 반지름을 입력해주세요.");
-		circleArea = scn.nextDouble();
-		System.out.println("원의 넓이는 " + p.circleArea(circleArea));
-		System.out.println("종료합니다.");
-		
-		
-	}
+	
+	
+}
 }
