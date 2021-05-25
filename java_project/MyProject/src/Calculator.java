@@ -13,13 +13,13 @@ public class Calculator {
 	//		void div(int num1, int num2) {
 	//			System.out.println(num1 / num2);	}
 
-	int add (int a, int b) { 
+	double add (double a, double b) { 
 		return a + b;	}
-	int subtract (int a, int b) {
+	double subtract (double a, double b) {
 		return a - b;	}
-	int multiply (int a, int b) {
+	double multiply (double a, double b) {
 		return a * b;	}
-	int divide (int a, int b) { 
+	double divide (double a, double b) { 
 		return a / b;	}
 
 	static int getValue() {
@@ -49,18 +49,19 @@ public class Calculator {
 		Scanner scn = new Scanner(System.in);
 
 
-		int a, b, result;
+		//		int a, b;
+		double a, b, result;
 		char operator;
 		System.out.print("첫 번째 숫자를 써주세요. : ");
-		a = scn.nextInt();
+		a = scn.nextDouble();
 		System.out.print("두 번째 숫자를 써주세요. : ");
-		b = scn.nextInt();
+		b = scn.nextDouble();
 		System.out.print("연산 기호를 써주세요. (+ - * /)");
 		operator = scn.next().charAt(0);
 
 		switch (operator) {
 		case '+':
-			result = cal.add(a, b);
+			result = cal.add((double)a, (double)b);
 			break;
 
 		case '-':
@@ -68,11 +69,11 @@ public class Calculator {
 			break;
 
 		case '*':
-			result = a * b;
+			result = a * b;		//result = cal.multiply(a, b);
 			break;
 
 		case '/':
-			result = a / b;
+			result = a / b;		//result = cal.divide(a, b);
 			break;
 
 		default:
@@ -84,18 +85,18 @@ public class Calculator {
 		System.out.println("계산을 완료하였습니다.");
 		System.out.println("");
 
-		
+
 		Scanner sc = new Scanner(System.in);
 		Calculator calc = new Calculator();
-		
+
 		double circumference, circleArea;
-		System.out.println("원 둘레값을 위한 원의 반지름을 입력해주세요.");
+		System.out.println("원 둘레값을 위한 원의 반지름을 입력해주세요.(cm)");
 		circumference = sc.nextDouble();
-		System.out.println("원의 둘레는 " + calc.circumference(circumference));
-		System.out.println("==========");
-		System.out.println("원 넓이값을 위한 원의 반지름을 입력해주세요.");
+		System.out.println("원의 둘레는 " + calc.circumference(circumference) + "cm 입니다.");
+		System.out.println("======================");
+		System.out.println("원 넓이값을 위한 원의 반지름을 입력해주세요. (cm)");
 		circleArea = sc.nextDouble();
-		System.out.println("원의 넓이는 " + calc.circleArea(circleArea));
+		System.out.println("원의 넓이는 " + calc.circleArea(circleArea) + "cm² 입니다.");
 		System.out.println("종료합니다.");
 	}
 }
