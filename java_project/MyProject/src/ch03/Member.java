@@ -22,7 +22,6 @@ public class Member {
 		this.major = major;
 		this.grade = grade;
 		this.email = email;
-		
 	}
 
 	void printInfo() {
