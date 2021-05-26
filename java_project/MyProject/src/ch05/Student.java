@@ -45,7 +45,7 @@ public class Student {
 		System.out.println(this.name + "의 평균점수는 " + average + "점 입니다.");
 	}
 	public String toString() {
-		String str = this.name + ": " + this.korean + ", " + this.english + ", " + this.math;
+		String str = this.name + ":\t" + this.korean + ",\t" + this.english + ",\t" + this.math;
 		return str;
 	}
 
