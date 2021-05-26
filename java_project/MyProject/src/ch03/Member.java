@@ -10,15 +10,15 @@ public class Member {
 	String birthday;
 	String address;
 
-	Member(String name, String phonNo, String major, int grade, String email, String birthday, String address) {
-		this(name, phonNo, major, grade, email);
+	Member(String name, String phoneNo, String major, int grade, String email, String birthday, String address) {
+		this(name, phoneNo, major, grade, email);
 		this.birthday = birthday; 
 		this.address = address;
 	}
 	
-	Member(String name, String phonNo, String major, int grade, String email) {
+	Member(String name, String phoneNo, String major, int grade, String email) {
 		this.name = name;
-		this.phoneNo = phonNo;
+		this.phoneNo = phoneNo;
 		this.major = major;
 		this.grade = grade;
 		this.email = email;
