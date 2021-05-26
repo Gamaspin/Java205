@@ -89,23 +89,23 @@ public class Member {
 	Member() {}
 	
 	//② 위에서 정의한 정보를 출력하는 메소드 정의
-			void printInfo() {
-				System.out.println("이름 : " + this.name); //this -> 자기 자신의 참조값을 가지는 참조변수
-				System.out.println("휴대전화 : " + phoneNo);
-				System.out.println("전공 : " + major);
-				System.out.println("학년 : " + grade);
-				System.out.println("이메일 : " + email);
-				if(this.birthday == null) {
-					System.out.println("생일 : 입력된 데이터 없음");
-				} else {
-					System.out.println("생일 : " + birthday);
-				}
-				if(this.address != null) {
-					System.out.println("주소 : " + address);
-				} else {
-					System.out.println("주소 : 입력된 데이터 없음");
-				}
-			}
+	void printInfo() {
+		System.out.println("이름 : " + this.name); //this -> 자기 자신의 참조값을 가지는 참조변수
+		System.out.println("휴대전화 : " + phoneNo);
+		System.out.println("전공 : " + major);
+		System.out.println("학년 : " + grade);
+		System.out.println("이메일 : " + email);
+		if(this.birthday == null) {
+			System.out.println("생일 : 입력된 데이터 없음");
+		} else {
+			System.out.println("생일 : " + birthday);
+		}
+		if(this.address != null) {
+			System.out.println("주소 : " + address);
+		} else {
+			System.out.println("주소 : 입력된 데이터 없음");
+		}
+	}
 
 	public static void main(String[] args) {
 		Member m1 = new Member("손흥민", "010-3333-8888", "양발감아차기", 4, "hmson7@", "7월 7일", "Tottenham, England");
