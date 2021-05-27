@@ -8,5 +8,6 @@ public class Person_Main {
 		male.hello();
 		System.out.println("");
 		female.hello();
+		//System.out.println(personAge);
 	}
 }

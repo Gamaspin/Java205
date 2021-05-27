@@ -1,9 +1,21 @@
 package ch06;
+import java.util.Calendar;
 
 public class Person {
 	protected String name;
 	protected int age;
 	protected String id;
+	
+//	Calendar calendar = Calendar.getInstance();
+//	int thisYear = calendar.get(Calendar.YEAR);
+//	String birthYear = id.substring(0,2);
+//	char oldNew = id.charAt(7);
+//	int ageData;
+//	if(oldNew <3) {
+//		age = thisYear -  
+//	}
+//	
+	
 	
 	public Person() {}
 	public Person (String name, int age, String id) {
