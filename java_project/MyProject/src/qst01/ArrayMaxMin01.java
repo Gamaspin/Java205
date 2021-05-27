@@ -1,7 +1,7 @@
 package qst01;
 import java.util.*;
 
-public class ArrayMaxMin {
+public class ArrayMaxMin01 {
 	public static int miniValue(int[] arr) {
 		int min = arr[0];
 		for (int i=1; i < arr.length; i++) {

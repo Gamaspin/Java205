@@ -1,6 +1,6 @@
 package qst01;
 
-public class ArrayDeliverAdding {
+public class ArrayDeliverAdding02 {
 	public static void addOneDArr(int[][] arr, int add) {
 		for(int i=0; i<arr.length; i++) {
 			System.out.println(i + 1 + "번째의 배열");
@@ -21,7 +21,7 @@ public class ArrayDeliverAdding {
 				{10,12,14,16},
 				{11,22,33,44,55,66,77,88}
 		};
-		ArrayDeliverAdding.addOneDArr(arr,10);
+		ArrayDeliverAdding02.addOneDArr(arr,10);
 
 	}
 

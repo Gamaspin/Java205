@@ -1,6 +1,6 @@
 package qst01;
 
-public class ArrayMoving {
+public class ArrayMoving03 {
 	public static void change(int[][] arr) {
 		int[] temp;
 		for(int i=arr.length-1; i>0; i--) {
@@ -28,10 +28,10 @@ public class ArrayMoving {
 		};
 		
 		System.out.println("변경 전");
-		ArrayMoving.show(arr);
-		ArrayMoving.change(arr);
+		ArrayMoving03.show(arr);
+		ArrayMoving03.change(arr);
 		System.out.println("변경 후");
-		ArrayMoving.show(arr);
+		ArrayMoving03.show(arr);
 	}	
 
 }
