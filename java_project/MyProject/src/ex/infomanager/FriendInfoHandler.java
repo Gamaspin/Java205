@@ -2,8 +2,6 @@ package ex.infomanager;
 import java.util.Scanner;
 
 public class FriendInfoHandler {
-
-	
 	// 저장 데이터(객체)를 배열로 저장하고 관리하는 기능을 가지는 클래스
 	
 	Friend[] friendsInfo;
@@ -44,7 +42,6 @@ public class FriendInfoHandler {
 			//인스턴스 생성은 아래 한줄로 대체 가능함
 			//addFriendInfo(new HighFriend(name, phoneNumber, address, work);
 			
-			
 		} else if (choice == 2) {	//대학 친구(UnivFriend)
 			System.out.println("대학교 친구의 전공을 입력해주세요.");
 			String major = sc.nextLine();
@@ -62,7 +59,6 @@ public class FriendInfoHandler {
 		} else {
 			System.out.println("잘못 입력하셨습니다. 1(고교친구) 혹은 2(대학친구) 중에 숫자를 다시 입력해주세요.");
 		}
-		
 	}
 	
 	//Friend 클래스를 상속하는 타입의 인스턴스를 받아 배열에 저장해줌 (공통코드 생성)
@@ -98,5 +94,4 @@ public class FriendInfoHandler {
 		}
 		System.out.println("=========================");
 	}
-	
 }

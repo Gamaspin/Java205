@@ -4,7 +4,8 @@ public class HighFriend extends Friend {
 
 	String work;
 	
-	public HighFriend(String name, String phoneNumber, String address, String work) {
+	public HighFriend(String name, String phoneNumber, 
+					String address, String work) {
 		super(name, phoneNumber, address);
 		this.work = work;
 	}
@@ -20,7 +21,4 @@ public class HighFriend extends Friend {
 		System.out.println("이름 :\t" + this.getName());
 		System.out.println("전화 :\t" + this.getPhoneNumber());
 	}
-
-	
-	
 }
