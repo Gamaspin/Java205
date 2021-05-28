@@ -23,7 +23,7 @@ public class FriendBook {
 			System.out.println("메뉴를 선택해주세요.");
 
 			
-			int choice = sc.nextInt();
+			int choice = Integer.parseInt(sc.nextLine()) ;
 
 			switch(choice) {
 			case 1 : case 2 : 
