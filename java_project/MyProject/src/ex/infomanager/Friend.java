@@ -39,8 +39,8 @@ public class Friend {
 	
 	public void showData() {
 		System.out.println("이름 :\t" + this.name);
-		System.out.println("전화번호 :\\t" + this.phoneNumber);
-		System.out.println("주소 :\\t" + this.address);
+		System.out.println("전화번호 :\t" + this.phoneNumber);
+		System.out.println("주소 :\t" + this.address);
 	}
 	
 	public void showBasicInfo() {}		//상속을 통해 오버라이딩하기 위함

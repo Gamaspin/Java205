@@ -68,6 +68,7 @@ public class FriendInfoHandler {
 	//Friend 클래스를 상속하는 타입의 인스턴스를 받아 배열에 저장해줌 (공통코드 생성)
 	public void addFriendInfo(Friend f) {
 		friendsInfo[numOfFriend++] = f;
+		System.out.println("정보가 저장되었습니다.");
 	}
 	
 	//모든 데이터를 출력하는 메소드
