@@ -14,11 +14,11 @@ public class FriendBook {
 		while(true) {
 			System.out.println("친구 정보 관리 프로그램");
 			System.out.println("*** 메뉴 선택 *****");
-			System.out.println(Menu.HIGH_FRIEND + "1. 고교 친구 정보 입력");
-			System.out.println(Menu.UNIV_FRIEND + "2. 대학 친구 정보 입력");
-			System.out.println(Menu.SHOW_ALL + "3. 전체 정보 출력");
-			System.out.println(Menu.SHOW_BASIC + "4. 기본 정보 출력");
-			System.out.println(Menu.EXIT + "5. 프로그램 종료");
+			System.out.println(Menu.HIGH_FRIEND + ". 고교 친구 정보 입력");
+			System.out.println(Menu.UNIV_FRIEND + ". 대학 친구 정보 입력");
+			System.out.println(Menu.SHOW_ALL + ". 전체 정보 출력");
+			System.out.println(Menu.SHOW_BASIC + ". 기본 정보 출력");
+			System.out.println(Menu.EXIT + ". 프로그램 종료");
 			System.out.println("*****************");
 			System.out.println("");
 			System.out.println("메뉴를 선택해주세요.");
