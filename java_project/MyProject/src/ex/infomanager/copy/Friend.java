@@ -1,4 +1,4 @@
-package ex.infomanager;
+package ex.infomanager.copy;
 
 //상속을 목적으로 하는 클래스
 public abstract class Friend implements ShowData {
