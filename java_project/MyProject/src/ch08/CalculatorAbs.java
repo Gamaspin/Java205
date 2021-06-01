@@ -4,5 +4,5 @@ public abstract class CalculatorAbs implements Calculator {
 
 
 	public abstract long multiply(long n1, long n2) ;
-	public abstract long divide(long n1, long n2);
+	public abstract double divide(long n1, long n2);
 }
