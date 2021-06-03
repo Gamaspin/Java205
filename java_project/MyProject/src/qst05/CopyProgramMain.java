@@ -43,6 +43,5 @@ public class CopyProgramMain {
 
 		CopyProgram copyProgram = new CopyProgram(fromFile, toFile);
 		copyProgram.start();
-
 	}
 }

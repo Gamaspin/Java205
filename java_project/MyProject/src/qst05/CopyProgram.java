@@ -22,13 +22,12 @@ public class CopyProgram extends Thread {
 	public void run() {
 		try {
 			// 1. 파일의 바이너리 데이터를 읽어올 스트림 생성 : FileInputStream
-			//FileInputStream in = new FileInputStream("origin.pdf");
-			InputStream in = new FileInputStream(originFile);
+			FileInputStream in = new FileInputStream(originFile);
 
 			// 2. 파일을 쓰기위한 스트림 생성 : FileOutputStream
 			FileOutputStream out = new FileOutputStream(copyFile);
 
-			// 필터 스크림 생성 -> 기본 스트림이 필요
+			// 필터 스트림 생성 -> 기본 스트림이 필요
 			BufferedInputStream fin = new BufferedInputStream(in);
 			BufferedOutputStream fout = new BufferedOutputStream(out);
 
@@ -57,10 +56,8 @@ public class CopyProgram extends Thread {
 			System.out.println("복사 완료! 복사된 바이트 사이즈 : " + copyByte + "byte");
 
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
