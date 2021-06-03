@@ -12,7 +12,7 @@ public class HighLowGame {
 //		랜덤 숫자 부여
 		Random random = new Random();
 		int comPick = random.nextInt(100)+1;
-		System.out.println(comPick);
+//정답		System.out.println(comPick);
 
 //		정답 맞출 때 까지 계속 숫자 입력 시도 -> 텍스트 창 팝업으로 대체
 //		Scanner sc = new Scanner(System.in);
