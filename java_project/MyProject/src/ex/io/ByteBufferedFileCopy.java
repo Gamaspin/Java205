@@ -11,7 +11,7 @@ public class ByteBufferedFileCopy {
 	public static void main(String[] args) {
 
 		try {
-			// 1. 파일을 바이너리 데이터를 읽어올 스트림 생성 : FileInputStream
+			// 1. 파일의 바이너리 데이터를 읽어올 스트림 생성 : FileInputStream
 			//FileInputStream in = new FileInputStream("origin.pdf");
 			InputStream in = new FileInputStream("origin.pdf");
 			
