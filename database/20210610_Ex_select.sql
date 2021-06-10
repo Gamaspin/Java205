@@ -21,7 +21,7 @@ order by totalSal desc
 --3. 급여가 2000을 넘는 사원의 이름과 급여를 표현, 급여가 많은 것부터 작은 순으로 출력하시오.
 select ename, sal
 from emp
-where sal >= 2000
+where sal > 2000
 order by sal desc
 ;
 
@@ -65,7 +65,7 @@ where hiredate like '81%'
 --10. 관리자가 없는 사원의 이름과 담당 업무를 출력하시오.
 select ename, job
 from emp
-where MGR is null
+where mgr is null
 ;
 
 
