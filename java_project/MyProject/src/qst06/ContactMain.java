@@ -1,15 +1,15 @@
 package qst06;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
-public class ContactMain {
+public class ContactMain implements Serializable {
 	public static void main(String[] args) {
 		
 		
-		ContactInfo info = new ContactInfo();
-		
-		
-		
+		ArrayList<ContactInfo> info = new ArrayList(10);
 		Scanner sc = new Scanner(System.in);
 		
 		String name;
@@ -27,15 +27,28 @@ public class ContactMain {
 		email = sc.nextLine();
 		System.out.println("주소를 입력해주세요.");
 		address = sc.nextLine();
+		System.out.println("생일을 입력해주세요.");
+		birthday = sc.nextLine();
+		System.out.println("그룹을 입력해주세요.");
+		group = sc.nextLine();
+		
+		info.add(new ContactInfo(name, phoneNo, email, address
+					,birthday, group));
+		
+//		Iterator<ContactInfo> itr = info.iterator();
+//		while(itr.hasNext()) {
+//			System.out.println(itr.next());
+//		}
 		
 		System.out.println(info.toString());
 		
+		
+		
 	}
 
-	public ContactMain() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
+
+	
 
 
 }

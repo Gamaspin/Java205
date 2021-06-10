@@ -1,7 +1,6 @@
 package qst06;
 
-
-public class ContactInfo {
+public class ContactInfo  {
 
 	protected String name;
 	protected String phoneNo;
