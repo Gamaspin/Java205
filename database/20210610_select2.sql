@@ -1,4 +1,4 @@
-TRUNCATE table emp;
+--TRUNCATE table emp;
 
 select * from emp;
 
