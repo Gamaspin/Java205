@@ -146,7 +146,34 @@ select ename, deptno,
         when deptno=40 then 'Operations'
         end as deptname
 from emp
-order by deptno desc;
+order by deptno desc
+;
+
+-- 각 부서에 대해 부서번호 이름, 지역 명, 사원 수, 부서내의 모든 사원의 평균 급여를 출력하시오. 
+-- 평균 급여는 정수로 반올림 하시오. DECODE 사용.
+
+SELECT DECODE(DEPTNO, 10, 'ACCOUNTING',
+                      20, 'RESEARCH',
+                      30, 'SALES',
+                      40, 'OPERATIONS'
+       ) AS DNAME,
+       DECODE(DEPTNO, 10, 'NEW YORK',
+                      20, 'DALLAS',
+                      30, 'CHICAGO',
+                      40, 'BOSTON'
+       ) AS LOC,
+       COUNT(*) AS "사원 수", ROUND(AVG(SAL)) AS "부서 평균 급여"
+FROM EMP
+GROUP BY DEPTNO
+ORDER BY AVG(SAL);
+
+-- JOIN을 사용해 수정
+
+SELECT DEPT.DNAME, DEPT.LOC, COUNT(*), ROUND(AVG(SAL)) AS "부서 평균 급여"
+FROM EMP JOIN DEPT
+ON EMP.DEPTNO = DEPT.DEPTNO
+GROUP BY DEPT.DEPTNO, DEPT.DNAME, DEPT.LOC
+ORDER BY AVG(SAL);
 
 
 
