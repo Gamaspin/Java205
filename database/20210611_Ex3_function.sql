@@ -106,6 +106,22 @@ group by deptno
 order by deptno asc
 ;
 
+-- 조인 이용
+select e.deptno, d.loc, d.dname, round(avg(sal),2), count(*)
+from emp e, dept d
+where e.deptno = d.deptno
+group by e.deptno, d.loc, d.dname
+order by e.deptno
+;
+
+-- 서브쿼리 이용
+select deptno,
+        (select dname from dept d where e.deptno = d.deptno),
+        (select loc from dept d where e.deptno = d.deptno)
+from emp e
+group by deptno
+;
+
 
 --31. 업무를 표시한 다음 해당 업무에 대해 부서 번호별 급여 및 부서 10, 20, 30의 급여 총액을 각각 출력하시오. 
 --    별칭은 각 job, dno, 부서 10, 부서 20, 부서 30, 총액으로 지정하시오. 
