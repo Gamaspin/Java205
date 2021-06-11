@@ -5,7 +5,7 @@ from emp
 
 
 --16. SUBSTR 함수를 사용하여 사원들의 입사한 년도와 입사한 달만 출력하시오.
-select '19' || substr(hiredate,1,2) as hiredYear, substr(hiredate,3,3) as hiredMonth
+select substr(hiredate,1,2) as hiredYear, substr(hiredate,4,2) as hiredMonth
 from emp
 ;
 
