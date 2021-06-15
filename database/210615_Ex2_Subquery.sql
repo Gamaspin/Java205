@@ -3,7 +3,6 @@
 
 select * from orders;
 
-
 -1 마당서점의고객이요구하는다음질문에대해SQL 문을작성하시오.
 --
 --(5) 박지성이 구매한 도서의 출판사수
@@ -46,10 +45,7 @@ and custid = (select custid from customer where name = '박지성')
 
 select custid from customer where name = '박지성';
 
-
-
 --(7) 박지성이구매하지않은도서의이름
-
 select bookname
 from book 
 where bookid not in(select bookid 

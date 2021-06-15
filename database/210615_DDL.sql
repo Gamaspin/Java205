@@ -51,9 +51,67 @@ select * from emp05 ;
 
 
 
+------------------------------------------------------------------
+
+-- alter table {테이블 이름} drop
+
+-- emp01 테이블에 job 칼럼을 추가해보자
+alter table emp01
+add( job varchar2(9) )
+;
+desc emp01;
+
+-- emp01 테이블의 job 칼럼의 사이즈를 수정 9->30
+alter table emp01
+--modify( job varchar2(30) )
+modify( job varchar2(130) not null )
+;
+
+
+-- emp01 테이블의 job 칼럼을 삭제
+alter table emp01
+drop column job
+;
+
+drop table emp05;
+
+
+-- 모든 행을 삭제 : 주의)롤백이 안된다.
+truncate table emp02;
+
+
+-- 테이블의 이름 변경
+-- rename (old_name) to (new_name) ;
+rename emp01 to emp99;
+desc emp99;
 
 
 
+------------------------------------------------------------------
+
+
+create table emp02
+as
+select empno, ename, sal, job from emp where 1=0
+;
+desc emp02;
+drop table emp02;
+
+insert into emp02(empno, ename, sal, job, deptno) 
+            values(1000, 'SON', 2300, 'CHEIF', 20);
+insert into emp02(empno, ename, sal) values(1000, 'SON', 2300);
+--insert into emp02 values(null, null, 10000, 'CHEIF');
+
+
+create table emp02 (
+            empno number(4) primary key, --not null unique,
+            ename varchar2(20) not null,
+            sal number(6,2) check (sal > 500 and sal < 5000),
+            job varchar(20) default '미지정',
+            deptno number references dept(deptno)
+);
+
+select * from emp02;
 
 
 
