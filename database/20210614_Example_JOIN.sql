@@ -83,5 +83,5 @@ and e.hiredate > e2.hiredate
 select e.ename, e.hiredate, e2.ename, e2.hiredate
 from emp e, emp e2
 where e.mgr = e2.empno
-and e.hiredate < m.hiredate
+and e.hiredate < e2.hiredate
 ; 
