@@ -71,3 +71,12 @@ from dual;
 
 select pi_idx_pk.currval
 from dual;
+
+
+
+CREATE SEQUENCE DEPT_DEPTNO_SEQ 
+INCREMENT BY 10 
+START WITH 10;
+
+-- currval : 현재 값 반환
+-- nextval : 현재 시퀀스값의 다음 값을 반환
