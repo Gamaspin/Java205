@@ -13,12 +13,14 @@ desc phoneinfo_basic;
 
 insert into phoneinfo_basic
 values (1, 'KING', '010-0000-0000', 'king@bitcamp.com', 'KOREA', sysdate)
+--values (pi_idx_pk.nextval, 'KING', '010-0000-0000', 'king@bitcamp.com', 'KOREA', sysdate)
 ;
 
 select * from phoneinfo_basic;
 
 insert into phoneinfo_basic (idx, fr_name, fr_phonenumber)
 values (2, 'SCOTT' ,'010-0000-0001')
+--values (pi_idx_pk.nextval, 'SCOTT' ,'010-0000-0001')
 ;
 ----
 update phoneinfo_basic
@@ -43,9 +45,11 @@ desc phoneinfo_univ ;
 
 insert into phoneinfo_basic
 values (3, 'SON', '010-0000-0002', 'son@bitcamp.com', 'KOREA', sysdate)
+--values (pi_u_idx_pk, 'SON', '010-0000-0002', 'son@bitcamp.com', 'KOREA', sysdate)
 ;
 insert into phoneinfo_univ
 values (1, 'COMPUTER', 4, 3)
+--values (1, 'pi_u_idx_pk', 4, 3)
 ;
 
 select pb.fr_name, pu.fr_u_major, pu.fr_u_year
@@ -98,6 +102,11 @@ select *
 from phoneinfo_basic pb, phoneinfo_univ pu, phoneinfo_com pc
 where pb.idx = pu.fr_ref(+) and pb.idx = pc.fr_ref(+)   --outer join
 ;
+
+-- Sequence : 번호 재생기
+create sequence pi_idx_pk;
+create sequence pi_u_idx_pk start with 3 increment by 1;
+create sequence pi_c_idx_pk start with 3 increment by 1;
 
 
 

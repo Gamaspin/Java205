@@ -32,7 +32,16 @@ create table phoneInfo_com (
 
 
 
+-- 전체 친구 정보
+select *
+from phoneInfo_basic pb, phoneInfo_univ pu, phoneInfo_com pc
+where pb.idx = pu.fr_ref(+) and pb.idx = pc.fr_ref(+)
+;
 
+-- Sequence : 번호 재생기
+create sequence pi_idx_pk;
+create sequence pi_u_idx_pk start with 3 increment by 1;
+create sequence pi_c_idx_pk start with 3 increment by 1;
 
 
 
