@@ -8,23 +8,23 @@
 drop table emp; 
 drop table dept; 
 
-create table dept(                        -- dept table ����
-  deptno number,                          -- �μ���ȣ
-  dname  varchar2(14),                    -- �μ���
-  loc    varchar2(13),                    -- �μ���ġ
-  constraint pk_dept primary key (deptno) -- deptno�� pk����
+create table dept(                        -- dept table 생성
+  deptno number,                          -- 부서번호
+  dname  varchar2(14),                    -- 부서명
+  loc    varchar2(13),                    -- 부서위치
+  constraint pk_dept primary key (deptno) -- deptno로 pk설정
 );
 
-create table emp(                         -- emp table ����
-  empno    number,                        -- ������ȣ
-  ename    varchar2(10),                  -- ������
-  job      varchar2(9),                   -- ��å
-  mgr      number(4),                     -- ���Ŵ���
-  hiredate date,                          -- �Ի���
-  sal      number(7),                     -- ����
-  comm     number(7),                     -- ���ʽ�
-  deptno   number,                        -- �μ���ȣ
-  constraint pk_emp primary key (empno)   -- empno�� pk����
+create table emp(                         -- emp table 생성
+  empno    number,                        -- 직원번호
+  ename    varchar2(10),                  -- 직원명
+  job      varchar2(9),                   -- 직책
+  mgr      number(4),                     -- 담당매니저
+  hiredate date,                          -- 입사일
+  sal      number(7),                     -- 월급
+  comm     number(7),                     -- 보너스
+  deptno   number,                        -- 부서번호
+  constraint pk_emp primary key (empno)   -- empno로 pk설정
 );
 -- DEPT DML
 insert into dept values(10, 'ACCOUNTING', 'NEW YORK');
