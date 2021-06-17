@@ -26,7 +26,7 @@ insert into emp01 select * from emp01;
 insert into emp01 (empno, ename) values (7777, 'LUCKY') ;
 
 
-select * from emp01 where ename = 'LUCKY';
+select * from emp01 where ename = 'LUCKY';  -- f10을 눌러서 index 여부 확인 가능
 select * from emp01 where ename = 'SCOTT';
 
 
