@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 전체부분 */
+        *{
+            margin:0px auto;
+            padding:0px;
+
+        }
+        body{
+            background-color: white;
+        }
+        /* 메인랩 */
+        #main_wrap{
+            width:800px;
+            height: auto;
+            overflow:hidden;
+            border:1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        /* 헤더 */
+        header{
+            padding: 20px;
+            width:798px;
+        }
+        
+        /* 네이게이션 */
+        nav{
+            width:798px;
+            /* height: auto; */
+            overflow:hidden;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul{
+            margin:5px;
+        }
+        nav li{
+            width: auto;
+            list-style: none;
+            float:left;
+            padding: 10px;
+
+        }
+        #search{
+            float: right;
+            margin-top: 5px;
+        }
+        
+        #search input[type=text]{
+            border-radius: 10px 0 0 10px;
+            border-color: #ddd;
+            margin:-5px;
+        }
+        #search input[type=button]{
+            border-radius: 0 10px 10px 0;
+            background-color: #ddd;
+            
+        }
+
+        /* 섹션 */
+        section{
+            width:598px;
+            float:left;
+        }
+        
+        /* 아티클 */
+        article{
+            border-bottom: 1px solid #ddd;
+            padding:20px;
+        }
+        article> h1{
+            font-size: 32px;
+        }
+        .cont_margin{
+            margin:10px;
+        }
+        p{
+            line-height: 180%; /*줄간격*/
+        }
+    
+        /* aside설정 */
+        aside{
+            height: 200px;
+            float:left;
+            padding: 20px;
+            
+        }
+        aside>h4{
+            text-align: center;
+        }
+        aside>ul{
+            list-style: none;
+            padding:10px;
+            font-display: center;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+        
+        /* 푸터 */
+        footer{
+            width: 798px;
+            height: 50px;
+            line-height: 50px;
+            clear:both;
+            color:blue;
+            margin-left: 10px;
+        }
+        
+    </style>
+   
+</head>
+
+
+
+
+<body>
+    <!--전체 감싸는 블록-->
+    <div id="main_wrap">
+
+        <!--헤더-->
+        <header>
+            <h1>HTML5 Example Preview</h1>
+            <h4 >Bitcamp</h4>
+        </header>
+        
+        <!--네비게이션-->
+        <nav>
+            <ul>
+                <li><a href="#">HTML5</a></li>
+                <li><a href="#">CSS3</a></li>
+                <li><a href="#">JavaScript</a></li>
+            </ul>
+            <div id="search">
+                <input type="text">
+                <input type="submit" value="검색">
+            </div>
+        </nav>
+
+        <!-- 내용 -->
+        <div>
+            <section>
+                <article>
+                    <h1 class="cont_margin">HTML5 개요와 활용</h1>
+                    <h5 class="cont_margin">2021년 07월 01일</h5>
+                    <img  class="cont_margin" src="http://placehold.it/430x280" />
+                    <p>HTML5는 HTML의 차기 주요 제안으로써 HTML 4.01, XHTML 1.0, DOM Level 2 HTML에 대한 차세대 표준안이다. 
+                        플래시나 실버라이트와 같은 별도의 플러그인 없이 웹에서 표준적인 방식으로 멀티미디어를 재생하고 
+                        로컬 자원을 이용하는 등의 응용프로그램 수준의 웹을 개발하기 위한 기술의 총칭이다 </p>
+                    <p>현재 W3C를 주축으로 한 애플, 모질라, 구글, 오페라, 마이크로소프트 등 
+                        모든 웹 브라우저 벤더가 참여하고 있는 산업 표준이기도 하다. </p>
+                </article>
+                <article>
+                    <h1 class="cont_margin">HTML5 응용과 실습</h1>
+                    <h5 class="cont_margin">2021년 07월 01일</h5>
+                    <img class="cont_margin" src="http://placehold.it/430x280" />
+                    <p>웹 프로그래밍을 처음 배우는 독자를 위한 입문서로 HTML5, CSS3, 자바스크립트, jQuery까지 한 권으로 기본기를 다질 수 있다. 
+                        최신 웹 표준에 맞게 배울 수 있도록 웹에 대한 기본 이해부터 프로젝트 완성까지 단계적으로 다룬다.</p>
+    
+                    <p>예제는 단편적인 기능 익히기에 그치지 않고 실제 개발에 응용할 수 있도록 기본 예제 → 응용 예제 → 종합 예제(블로그 제작)의 
+                        점차 발전되는 형태로 구성되어 있다. 
+                        프로젝트에서는 간단한 모바일 페이지와 핀터레스트 스타일의 감각적인 웹 페이지를 제작한다.</p>
+                </article>
+            </section>
+            <aside>
+                <h4>카테고리</h4>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                    <h4>최근글</h4>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+            </aside>
+        </div>
+
+    <!--푸터-->
+        <footer>
+            Created by Rhs
+        </footer>
+    </div>
+</body>
+</html>
