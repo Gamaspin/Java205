@@ -120,5 +120,3 @@ select * from emp02;
 
 
 
-
-
