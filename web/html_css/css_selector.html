@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Document </title>
+    <style>
+        
+        /* 전체 선택자 */
+        * {
+            color : rgba(0, 0, 0, 0.87);
+        }
+
+        /* 태그 선택자 */
+        h1 {
+            background: skyblue;
+            margin-top: 50px;
+            margin-left: 80px;
+        }
+
+        /* 아이디선택자 */
+        #title {
+            font-size: 16px;
+            background-color: crimson;
+        }
+
+        /* 클래스선택자 */
+        .font_a{
+            font-style: italic;
+        }
+        .font_b{
+            font-weight: bold;
+        }
+
+        /* 여러개의 선택자 지정 */
+        *, p {
+            margin : 50;
+            padding : 50;
+        }
+
+        h1::selection, p::selection {
+            background-color: lightseagreen;
+            color: wheat;
+        }
+
+        #aside {
+            background-color: blue;
+            color: rgb(210, 29, 216);
+            width: 50%;
+        }
+
+        #content {
+            background-color: green;
+            color: rgb(78, 41, 182);
+            width: 200px;
+        }
+
+        .font_color_blue {
+            color : blue;
+
+        }
+        li.back_color_green {
+            background-color: yellowgreen;
+        }
+
+        p.back_color_green {
+            background-color: yellowgreen;
+        }
+
+        /* 속성 선택자 */
+        input[type] {
+            width : 150px;
+            height : 50px;
+            font-size: 150%;        /* 16px * 1.5 -> 24px */
+        }
+        input[type = text] {
+            background-color: rgb(97, 221, 221);
+        }
+
+        input[type = password] {
+            background-color: crimson;
+        }
+
+        .img {
+            width: 200px;
+            height: 250px;
+
+        }
+        img[src$=png] {
+            border : 5px solid red;
+        }
+        img[src$=gif] {
+            border : 10px solid blue;
+        }
+
+        /*후손선택자
+        부모선택(공백) 선택자*/
+        
+        #header1 h1{
+            color: red;
+        }
+        #section h1 {
+            color: orange;
+        }
+
+
+        /* 자손 선택자
+            부모선택>선택자 */
+        #header1>h1 {
+            background-color: peru;
+        }
+        #nav>p {
+            background-color: rgb(155, 148, 141);
+        }
+
+
+        div.box {
+            /* width: 500px; */
+            height: 0px;
+            border: 1px solid black;
+        
+        }
+        input[type=checkbox]:checked+div {
+            height: 150px;
+            background-color: blanchedalmond;
+            }
+
+        div {
+        overflow: hidden;
+        width: 650px;
+        height: 300px;
+        }
+
+        ol {
+            overflow: hidden;
+            list-style: none;
+        }
+        ol>li {
+            float : left;
+            /* width: 100px; */
+            padding : 5px 30px;
+        }
+        ol>li:hover {
+            background-color: black;
+            color: white;
+            font-weight: bolder;
+        }
+        ol>li:nth-child(2n) {
+            background-color : brown;
+        }
+        ol>li:nth-child(2n+1) {
+            background-color : rgba(22, 177, 204, 0.836);
+        }
+        ol>li:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+        ol>li:last-child {
+            border-radius: 0 50px 50px 0;
+        }
+
+
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+
+    <hr>
+    <ol>
+        <li>one</li>
+        <li class = "back_color_green">two</li>
+        <li>three</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+        <li>seven</li>
+    </ol>
+
+
+
+    <hr>
+
+    <label for = "chk">check</label>
+    <input id="chk" type = "checkbox">
+
+
+
+
+
+
+    <p></p>
+
+    <input type="checkbox">
+    <div class = "box">
+    <h1>개인보호 보호정책</h1>
+    <p>개인 정보를 활용합니다.</p>
+    </div>
+
+
+    <hr>
+    <p></p>
+    <div id="header1">
+        <h1 class = "title">Lorem ipsum</h1>
+        
+        <div id = "nav">
+            <h1>Navigation</h1>
+            <p>ABBABBCBCBCDDEFGHGFF</p>
+        </div>
+    </div>
+    <div id="section">
+        <h1 class="title">Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+
+
+    <p></p>
+    <img src="a.jpg" alt="a.jpg" class="img">
+    <img src="b.png" class="img">
+    <img src="c.gif" alt="c.gif">
+
+    <p></p>
+    <input type = "text"> <input type="password">
+
+
+    <p></p>
+    <ul>
+        <li class = "font_color_blue">사과</li>
+        <li class = "back_color_green">바나나</li>
+        <li>오렌지</li>
+        <li>레몬</li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+    <hr>
+
+    <div id="header">
+        <h1>header</h1>
+    </div>
+    <div id="wrap">
+        <div id="aside">
+            <h1>aside</h1>
+        </div>
+        <div id="content">
+            <h1>content</h1>
+        </div>
+    </div>
+
+
+
+    <p></p>
+    <h1 id = "title" class = "font_a"> 김총리 "변이바이러스 확산시 접종자도 실외 마스크 의무화" </h1>
+    <p class="font_a font_b back_color_green">발언하는 김부겸 총리
+        (서울=연합뉴스) 김승두 기자 = 김부겸 국무총리가 29일 정부서울청사에서 열린 
+        코로나19 대응 중앙재난안전대책본부(중대본) 회의에서 발언하고 있다. 
+        2021.6.29
+
+    </p>
+    
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 웹 문서의 추가적인 속성들을 정의  -->
+<head>
+    <!-- 문서의 제목 -->
+    <title>
+        HTML5 기본 태그
+    </title>
+    <!-- 문서의 추가적인 속성 -->
+    <meta = charset = 'utf-8'>  <!--웹 문서의 문자 셑 설정-->
+
+    <style>
+
+    </style>
+    
+    <script>
+    </script>
+
+
+</head>
+
+<body>
+    <h1 id="c-3"> a&lt;b b&gt;c </b> </h1>
+
+    <font size = 2 id = "slider_value_view">0</font>	
+    <input oninput = 'ShowSliderValue(this.value)'  type = "range" min='0' max='100' value='0'>
+    <script language = "javascript">
+        function ShowSliderValue(j)
+        {
+            var b = document.getElementById("slider_value_view");
+            b.innerHTML = j
+        }
+    </script>
+
+
+    <form action = "#" accept-charset="utf-8" name = "datalist" method = "get"> 
+        
+        <fieldset style = "width:350">
+            <legend> HTML5 < range > </legend>
+               
+               range : <input oninput = 'ShowSliderValue2(this.value)' type = "range" id = "range" min = "0" max = "100" step = "1" name = "range">    
+               <font size = 3 id = "range2">50</font>
+               <script language = "javascript">
+               function ShowSliderValue2(i)
+                    {
+                        var a = document.getElementById("range2");
+                        a.innerHTML = i
+                    }
+                </script>
+            </fieldset>
+            <br><br><br>
+
+
+        <fieldset style = "width:350">
+            <legend>HTML5 < number ></legend>
+               number : <input type = "number" min = "0" max = "100" step = "1" name = "number">       
+        </fieldset>
+        
+        <br><br>
+        <input type = "submit" value = "submit"/>
+        <input type = "reset" value = "reset"/><br><br>
+
+    </form>
+    <p></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <img src = "루피.png" alt = ".루피" width="300" />
+    <img src = "리트리버.jpg" alt = "리트리버" width="300" />
+    <img src = "images/강아지1.jpg" alt = "강아지" width="300" />
+
+    <br>
+    <hr>
+    <img src = "Nothing" alt = "그림이 존재하지 않습니다." width="300" height="300" />
+
+    <img src = "http://placehold.it/300x200" alt = "오류" />
+
+
+
+    <br>
+    <hr>
+    <audio src = "media/old_pop.mp3" controls = "controls" ></audio>
+
+    <br>
+    <hr>
+
+<fieldset>
+ <legend>회원가입 폼</legend>
+ <form>
+ <table>
+ <tr>
+ <th><label for="userid">아이디(email)</label></th>
+ <td><input type="email" id="userid" name="userid"></td>
+ </tr>
+ <tr>
+ <th><label for="pw">비밀번호</label></th>
+ <td><input type="password" id="pw" name="pw"></td>
+ </tr>
+ <tr>
+ <th><label for="username">이름</label></th>
+ <td><input type="text" id="username" name="username"></td>
+ </tr>
+ <tr>
+ <th><label for="userPhoto">사진</label></th>
+ <td><input type="file" id="userPhoto" name="userPhoto"></td>
+ </tr>
+ <tr>
+ <th></th>
+ <td><input type="submit" value="회원가입"></td>
+ </tr>
+ </table>
+ </form>
+</fieldset>
+<hr><hr>
+    <!-- 서버로 전송하고자 하는 폼 데이터를 묶는다.
+action : 데이터를 전송할 경로(위치)
+method : 전송 방식 ( GET / POST ) -->
+<form action="#" method="get">
+    type=text : <input type="text" name="username" value="tester"> <br>
+    type=password : <input type="password" name="pw"> <br>
+    type=checkbox : <input type="checkbox" name="chk" value="ok1">
+    <input type="checkbox" name="chk" value="ok2"><br>
+    type=radio : A<input type="radio" name="choice" value="A">
+    B<input type="radio" name="choice" value="B">
+    C<input type="radio" name="choice" value="C">
+    D<input type="radio" name="choice" value="D">
+    F<input type="radio" name="choice" value="F"> <br>
+    type=color : <input type="color" name="color"> <br>
+    type=datetime-local : <input type="datetime-local" name="localDatetime"><br>
+    type=date : <input type="date" name="date"><br>
+    type=time : <input type="time" name="time"><br>
+    type=month : <input type="month"><br>
+    type=week : <input type="week"> <br>
+    type=email : <input type="email" name="email"><br>
+    type=file : <input type="file" name="userPhoto"><br>
+    type=hidden : 화면에는 표현되지 않는다.
+    <input type="hidden" name="idx" value="1"> <br>
+    type=image : <input type="image" src="mini1.jpg" height="50"><br>
+    type=number : <input type="number" name="num"> <br>
+    type=range : <input type="range" name="age" min="0" , max="150"> <br>
+    type= tel : <input type="tel"> <br>
+    type=url : <input type="url" name="url"><br>
+
+    <select name="year">
+        <option> - </option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+    </select>
+
+    <br> <br>
+
+    <input type="submit">
+    <input type="reset">
+</form>
+<hr>
+
+
+    <br>
+    <hr>
+<table border = "1">
+    <thead>
+    <tr>
+        <th> thead 1</th>
+        <th> thead 2</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>tbody 1-1</td>
+            <td>tbody 1-2</td>
+        </tr>
+        <tr>
+            <td>tbody 2-1</td>
+            <td>tbody 2-2</td>
+        </tr>
+        <tr><td>111</td><td>2222</td><td>33333</td></tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>tfoot 1</td>
+            <td>tfoot 2</td>
+        </tr>
+
+    </tfoot>
+</table>
+
+<hr>
+<table border = "1">
+    <tr>
+        <th colspan = "3">cell</th>
+    </tr>
+    <tr>
+        <td rowspan="3">cell</td>
+        <td rowspan="2">cell</td>
+        <td>cell</td>
+    </tr>
+    <tr>
+        
+        <td>cell</td>
+    </tr>
+    <tr>
+        <td>cell</td>
+        <td>cell</td>
+    </tr>
+    <tr>
+        <td rowspan="4">cell</td>
+        <td rowspan="2">cell</td>
+        <td>cell</td>
+    </tr>
+    <tr>
+        <td>cell</td>
+    </tr>
+    <tr>
+        <td rowspan="2">cell</td>
+        <td>cell</td>
+    </tr>
+    <tr>
+        <td>cell</td>
+    </tr>
+
+
+
+
+
+</table>
+
+
+
+
+
+<ul>  <!--  Unordered List -->
+    <li>사과</li>
+    <li>바나나</li>
+    <li>파인애플</li>
+</ul>
+
+<ol> <!--  Ordered List -->
+    <li>사과</li>
+    <li>바나나</li>
+    <li>파인애플</li>
+</ol>
+    <br>
+    <br>
+    <h1> a <b b > c </h1>
+    <h2> a < b b > c </h2>
+    <h1> a&lt;b b&gt;c </b> </h1>
+
+    <h1> header - h1 </h1>
+    <h2> header - h2 </h2>
+    <h3> header - &nbsp&nbsp&nbsp       h3 </h3>
+    <h4> header - h4 </h4>
+    <h5> header - h5 </h5>
+    <h6> header - h6 </h6>
+    <br>
+    <hr>
+
+
+
+    <a href = "http://www.bitcamp.co.kr">비트캠프</a>
+    <br>
+    <a href = "http://www.naver.com">네이버</a>
+    <br>
+    <a href = "https://www.daum.net">다음</a>
+<br>
+    <a href = "#c-1">홍차</a>
+    <a href = "#c-2">월급</a>
+    <a href = "#c-3">header tag</a>
+
+
+
+
+
+
+    <hr>
+    <h1 id = "c-1">홍차</h1>
+    <hr>
+    <h3>정의</h3>
+    <p>
+
+    <p>홍차는 우롱차보다 더 많이 발효된 차의 일종이다. </p>
+    </p>
+    <p>
+
+    <h3>등급</h3>
+    <p>
+
+    
+
+    </p>
+    <p>- 브로큰 페코</p>
+    <p>- 브로큰 페코 수숑</p>
+        - 브로큰 오렌지 페코 패닝</p>
+
+
+
+
+    <hr>
+
+    <h1 id = "c-2"><i>월급 320만원 나혼자 가구도 재난지원금?</i><br>…소득하위 80% 기준액은</h1>
+    <p> 당정, 33조원 2차 추경 합의…5차 재난지원금 대상 확정 <br>
+        건보 기준 1인 가구 월 365만원·4인 975만원 이하땐 혜택 </p>
+    <p> (세종=뉴스1) 한종수 기자 = 당·정이 코로나 상생 국민지원금, 이른바 5차 재난지원금을 소득 하위 80% 가구에 지급하기로 합의하면서 '소득하위 80%'에 자신이 포함되는지 궁금증이 커지고 있다. </p> 
+
+    <p> 29일 정부에 따르면 당정은 이날 국회 의원회관에서 당정 협의를 갖고 5차 재난지원금 대상을 소득 하위 80% 가구에만 지급하는 내용이 포함된 2021년도 2차 추가경정예산안을 논의했다.</p>
+
+
+        <p></p>
+    <form action = "#" accept-charset="utf-8" name = "person_info" method = "get"> 
+        <fieldset style = "width:250">
+            <legend>개인 정보 입력</legend>
+                지역선택 (size, multiple속성 추가)<br>
+                <select name = "city2" size = "5" multiple>
+                        <option value = "seongnam-si">성남시</option>
+                        <option value = "suwon-si">수원시</option>
+                        <option value = "yongin-si">용인시</option>
+                        <option value = "anyang-si">안양시</option>
+                        <option value = "gwacheon-si">과천시</option>
+                        <option value = "hanam-si">과천시</option>  
+                </select>
+                <br><br>
+                지역선택 (optgroup 태그 포함)<br>
+                <select name = "city1">
+                    <optgroup label = "서울">
+                        <option value = "songpa-gu">송파구</option>
+                        <option value = "gangnam-gu">강남구</option>
+                        <option value = "seocho-gu">서초구</option>
+                        <option value = "junggu-gu">중구</option>
+                    </optgroup>
+
+                     <optgroup label = "경기도">
+                        <option value = "seongnam-si">성남시</option>
+                        <option value = "suwon-si">수원시</option>
+                        <option value = "yongin-si">용인시</option>
+                        <option value = "anyang-si">안양시</option>
+                    </optgroup>         
+                </select>
+                <br><br>
+                <input type = "submit" value = "submit"/>
+                <input type = "reset" value = "reset"/><br><br>
+        </fieldset> 
+    </form>
+    <p></p>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
