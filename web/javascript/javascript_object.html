@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Object</title>
+
+    <!-- <script>
+        // 객체 정의 => {}
+        var obj = {
+            // 속성의 정의 => 속성이름 : 데이터(숫자, 문자열, 함수, 객체, undefined, boolean 등등) 
+            // 여러개의 속성을 정의할 때는 "," 를 이용해서 추가해주면 된다.
+            name: '손흥민',
+            age: 30,
+            // 함수 -> 객체안에 존재하는 함수는 메소드라 칭한다.
+            hello: function(){
+                alert('안녕하세요.' + this.name + '입니다. 저의 나이는 ' + this.age + '살 입니다.');
+            }
+        };
+        console.log('obj type : '+ typeof obj, obj);
+        
+        obj.hello();
+        console.log('이름 : ', obj.name);
+    </script> -->
+
+
+    <!-- <script>
+        // 객체의 속성을 동적으로 추가
+        var player = {};
+        //console.log(player);
+
+        //속성 추가
+        player.name = '손흥민';
+        player.team = '토트넘';
+        player.number = 7;
+        player.play = function(){
+            alert('라인 브레이킹');
+        };
+        player.address = '런던';
+        console.log(player);
+        player.play();
+
+        // 속성의 삭제
+        delete player.address;
+        console.log(player);
+    </script> -->
+
+
+    <!-- <script>
+        window.onload = function() {
+        // 학생들의 과목점수를 저장하는 배열
+        // 학생들의 과목 점수들은 객체로 생성 -> 배열로 객체를 저장
+        var students = [];
+        //  배열(객체)에 요소를 추가하는 메소드
+        students.push({name:'AAA', kor:90, eng:88, math:90});
+        students.push({name:'BBB', kor:88, eng:94, math:92});
+        students.push({name:'CCC', kor:85, eng:98, math:97});
+        students.push({name:'DDD', kor:78, eng:100, math:79});
+        students.push({name:'EEE', kor:78, eng:82, math:84});
+
+        students.push({name:'FFF', kor:88, eng:100, math:90});
+        students.push({name:'GGG', kor:94, eng:84, math:100});
+        students.push({name:'HHH', kor:98, eng:88, math:90});
+        students.push({name:'III', kor:100, eng:98, math:67});
+        students.push({name:'JJJ', kor:100, eng:98, math:100});
+
+        // 각 요소 객체에 메소드를 추가
+        // 합을 구해서 반환하는 메소드
+        // 평균값을 구해서 반환하는 메소드
+        for(var i=0; i<students.length; i++) {
+            // 합을 구하는 메소드
+            students[i].getSum = function(){
+               return this.kor + this.eng + this.math;
+            }
+            students[i].getAvg = function(){
+                return this.getSum()/3;
+            }
+
+            students[i].print = function() {
+                return this.name + ', ' + this.getSum() + ', ' + this.getAvg();
+            }
+        };
+
+        // for(var i=0; i<students.length; i++) {
+        //     // body 태그에 요소들을 추가
+        //     var html = '<h3>' + students[i].print() + '</h3>';
+        //     document.body.innerHTML += html;
+        // }
+
+        //var html = '<h3> 이름 : 총점 : 평균 </h3>';
+        var html = '<table border="1">';
+        html += '   <tr>';
+        html += '       <th>이름</th>';
+        html += '       <th>총점</th>';
+        html += '       <th>평균</th>';
+        html += '   </tr>';
+
+        for(var i=0; i<students.length; i++) {
+            // body 태그에 요소들을 추가
+            html += '   <tr>';
+                html += '       <td>'+students[i].name+'</td>';
+                html += '       <td>'+students[i].getSum()+'</td>';
+                html += '       <td>'+students[i].getAvg()+'</td>';
+                html += '   </tr>';
+                //html += '<h3>' + students[i].print() + '</h3>';
+            }
+        html += '</table>'
+        document.body.innerHTML = html;
+    }
+
+    </script> -->
+
+
+    <script>
+       // 생성자 함수 : new 키워드로 객체를 생성해주는 함수
+        // 생성자 함수의 이름(식별자)는 대문자로 시작
+        function Student(name, kor, eng, math){
+            // 속성
+            this.name=name;
+            this.kor=kor;
+            this.eng=eng;
+            this.math=math;
+
+            // 총점을 구하는 메소드
+
+            // 평균점수를 구하는 메소드
+            this.getAvg = function() {
+                return 
+            }
+            // html을 만들어주는 메소드
+
+        }
+
+        // var st = new Student('한국', 100, 50, 80);
+        // console.log(typeof st);
+        // console.log(st);
+
+        // Students 타입의 객체들을 저장하는 배열 생성
+
+
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>
