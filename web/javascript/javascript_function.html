@@ -111,14 +111,44 @@
     </script> -->
 
 
+    <!-- <script>
+        // 1초마다 시간을 출력
+        var id = setInterval(function(){
+            //var = html = '<h3>' + new Date() + '</h3>'
+            document.body.innerHTML = '<h3>' + new Date() + '</h3>'
+        }, 1000);
+
+        //10초 후에 인터벌 함수를 종료
+        setTimeout(function(){
+            clearInterval(id)
+        }, 10000);
+
+    </script> -->
+
+
     <script>
-        
 
-
-
-
+        //
     </script>
 
+
+    <script>
+        var won = '1000원';
+        var dollor = '1.15$';
+        
+        console.log(Number(won));    //NaN
+        console.log(Number(dollor));    //NaN
+
+        console.log(parseInt(won));
+        console.log(parseInt(dollor));
+        console.log(parseFloat(dollor));
+
+        console.log(parseInt('0x273')); // 16진수 표현
+        console.log(parseInt('00273')); // 10진수 표현
+        console.log(parseInt('273', 8)); // 8진수 표현
+        console.log(parseInt('273', 16)); // 16진수 표현
+        console.log(parseInt('10111011', 2)); // 2진수 표현
+    </script>
 </head>
 <body>
     
