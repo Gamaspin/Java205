@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Function</title>
-    <script>
+    <!-- <script>
         // 함수 : 필요한 데이터를 받아 
         //       데이터를 처리하고, 결과를 반환하는 기능을 정한 코드의 집합
         // function 키워드를 이용해서 정의
@@ -14,25 +14,110 @@
         // 2. 명시적 선언함수
 
 
+        // console.log('check', fn1);
+        // fn1();
+
+
         // 익명함수를 사용하는 예
         var fn1 = function () {
             alert('익명함수 호출!!!');
         };
+        var fn1 = function () {
+            alert('재정의된 익명함수 호출!!!');
+        };
         // 함수의 호출
         fn1();
         
+// 함수의 호이스팅으로 함수는 미리 만들어져 저장되어 있고, 
+// 
         //함수의 명시적 정의
         function fn2(){
             alert('명시적 정의 함수 호출!!!');
         }
+        function fn2() {
+            alert('재정의된 명시적 함수 호출!!');
+        }
         // 함수의 호출
         fn2();
 
+    </script> -->
+
+
+    <!-- <script>
+        // 매개변수, 반환값이 있는 함수 정의
+        // 매개변수 선언 시에는 var 생략
+        function add(num1, num2) {
+            return num1+num2;
+        }
+        alert(add(10, 20));
+
+        var hello = function(name) {
+            alert(name + '님 반갑습니다.');
+        };
+
+        hello('KING', 19, 29);
+        console.log(hello);
+
+    </script> -->
+
+
+    <!-- <script>
+        function sumAll() {
+            var sum = 0;
+            for(var i=0; i<arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        console.log('1~10까지의 합: ', sumAll(1,2,3,4,5,6,7,8,9,10));
+    </script> -->
+
+
+    <!-- <script>
+        // 함수에서 사용되는 return
+        // 1. 함수의 종료
+        // 2. 값을 반환
+
+        function returnFunc() {
+            alert('AAA');
+            return;     // 함수의 종료
+            alert('BBB');
+        }
+        var value = returnFunc();
+        console.log(typeof value, value);
+    </script> -->
+
+
+    <!-- <script>
+        // 콜백 함수 -> 매개변수로 전달받은 함수
+        // 매개변수로 전달받은 함수를 10번 실행하는 함수를 정의
+        function callTenTimes(callbackFn) {
+            //데이터처리 .....
+            for(var i=0; i<10; i++) {
+                callbackFn();
+            }
+        }
+        // var callback = function() {
+        //     //alert('함수 호출');
+        //     console.log('callbackFunction : ');
+        // };
+
+        function callback(){
+            alert('함수 호출');
+            console.log('callbackFunction : ');
+        }
+        
+        callTenTimes(callback);
+    </script> -->
+
+
+    <script>
+        
+
+
+
 
     </script>
-
-
-
 
 </head>
 <body>
