@@ -21,12 +21,47 @@
 
         //window.open('https://www.naver.com', 'newWindow', 'width=300, height=400');
 
-        var child = window.open('', 'child', 'width = 350, height=450');
+        /* var child = window.open('', 'child', 'width = 350, height=450');
         
         var html = '<h1 onclick = "self.close();">윈도우 닫기</h1>'; 
 
-        child.document.write('<h1>부모 윈도우에서 텍스트를 추가</h1>' + html);
+        child.document.write('<h1>부모 윈도우에서 텍스트를 추가</h1>' + html); */
         
+        // console.log(screen);
+
+        // console.log(location);
+
+
+        // setTimeout(function(){
+        //     location.href='https://www.naver.com'
+        // }, 3000);
+
+        // if(confirm('네이버 페이지로 이동하시겠습니까?')){
+        //     location.href='https://www.naver.com'
+        // };
+
+        //console.log(navigator);
+
+
+        window.onload = function() {
+            // 태그 생성, 텍스트 생성 -> 태그에 텍스트를 붙여준다.
+
+            // h1 tag를 생성 (변수를 선언)
+            var header = document.createElement('h1');
+            // 텍스트 node를 생성
+            var textNode = document.createTextNode('Hello DOM');
+
+            // (tag에 노드를 연결), 텍스트 노드를 적용
+            header.appendChild(textNode);   // <h1>Hello DOM</h1>
+
+            // body태그에 h1태그를 적용
+            document.body.appendChild(header);
+
+            console.log(textNode);
+            console.log(header);
+
+        }
+
     </script>
 
 
