@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_event</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+    <style>
+        h1, h2 {
+            border: 1px solid #AAA;
+        }
+
+        h1:hover, h2:hover {
+            cursor: pointer;
+        }
+
+    .reverse {
+        background-color: rgb(69, 114, 154);
+        color: gold;
+    }
+
+    div{
+        border: 1px solid darkgray;
+        padding: 10px;
+
+        border-radius: 5px;
+
+        margin: 10px 0;
+
+    }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+
+            // h1 태그를 캐스팅하고 click 이벤트를 연결해보자
+            $('h1').on('click', function(){
+                
+                // this -> 이벤트가 발생한 엘리먼트 객체를 가리킨다
+                $(this).html(function(index, html){
+                    return html+'+';
+                });
+            });
+
+            $('h1').on({
+                // click : function(){},
+                mouseenter : function(){
+                    $(this).addClass('reverse');
+                },
+                mouseleave : function(){
+                    $(this).removeClass('reverse');
+                }
+
+            });
+
+            // .hover() -> mouseenter, mouseleaver를 한번에 처리해주는 메소드
+            $('h2').hover(function(){
+                $(this).addClass('reverse');
+            }, function(){
+                $(this).removeClass('reverse');
+                // 이벤트 삭제
+                //$(this).off();
+                $(this).off('mouseleave');
+            });
+
+
+
+
+            $('div').click(function(){
+                // ,this <- 이벤트가 발생할 부분 = div
+                var h3 = $('h3',this).text();
+                        // $('h3',this). ==> 이벤트가 발생한 div 안에 위치한 h3을 선택
+                var p = $('p',this).text();
+
+                alert(h3 + '\n' + p);
+
+            });
+
+
+
+            $('a').click(function(e){
+                alert('a tag click');
+            
+                var e = e || window.evnet;   // e가 false 일때 뒷문장 실행
+
+                // // 이벤트 버블링(위로 전달되는 것) 제거
+                // if(e.stopPropagation){
+                //     e.stopPropagation();
+                // }
+
+                // // 기본 이벤트 제거
+                // e.preventDefault();
+
+                return false;
+            });
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+    <div>
+        <h1> <a>click</a>  </h1>
+    </div>
+
+
+
+    <div>
+        <h3>header3-0</h3>
+        <p>paragraph1</p>
+    </div>
+    <div>
+        <h3>header3-1</h3>
+        <p>paragraph2</p>
+    </div>
+    <div>
+        <h3>header3-2</h3>
+        <p>paragraph3</p>
+    </div>
+
+
+    <h2>header2-0</h2>
+    <h2>header-1</h2>
+    <h2>header-2</h2>
+
+
+    <h1>header1-0</h1>
+    <h1>header-1</h1>
+    <h1>header-2</h1>
+
+    
+
+</body>
+</html>
