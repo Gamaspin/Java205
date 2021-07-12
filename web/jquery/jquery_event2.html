@@ -35,8 +35,7 @@
             $('#wrap').on('click', 'h1', function(){
                 var length = $('h1').length;
                 var oldHtml = $(this).html();
-
-             $('#wrap').append('<h1>'+length+' - '+oldHtml+'</h1>');
+                $('#wrap').append('<h1>'+length+' - '+oldHtml+'</h1>');
             });
 
 
@@ -58,19 +57,39 @@
                 $('span').text(remain);
             });
 
+            $('#myForm').submit(function () {
+                alert('myForm submit !!');
+                return false;
+            });
 
+            $('#allCheck').change(function(){
 
+                // 선택 상태이면 true, 미 선택 상태이면 flase
+                if(this.checked){
+                    // #checkItem 안에 있는 input type=checkbox -> checked=true
+                    $('#checkItem').children().prop('checked', true);
+                } else {
+                    $('#checkItem').children().prop('checked', false);
+                }
+            });
 
 
         });
     </script>
 </head>
 <body>
+    <input type="checkbox" id="allCheck">
+    <label for="allCheck">all 전체 동의</label>
+
+    <div id="checkItem">
+        <input type="checkbox" checked> <label>A type</label>
+        <input type="checkbox"> <label>B type</label>
+        <input type="checkbox" checked> <label>C type</label>
+    </div>
+
 
     <textarea cols="50" rows="10"></textarea>
     <span>0</span>/150
-
-
 
 
     <div id="wrap">
