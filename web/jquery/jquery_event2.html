@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    
+    <style>
+        div {
+            border: 1px solid darkgray;
+            padding: 10px;
+        }
+
+        h1{
+            border: 3px solid black;
+        }
+
+
+    </style>
+
+    
+    <script>
+        $(document).ready(function(){
+
+            // $('h1').click(function(){
+            //     var length = $('h1').length;
+            //     var oldHtml = $(this).html();
+
+            //     $('#wrap').append('<h1>'+length+' - '+oldHtml+'</h1>');
+            // });
+
+            $('#wrap').on('click', 'h1', function(){
+                var length = $('h1').length;
+                var oldHtml = $(this).html();
+
+             $('#wrap').append('<h1>'+length+' - '+oldHtml+'</h1>');
+            });
+
+
+            $('textarea').keyup(function(){
+                var cnt = $(this).val().length;
+                var remain = 150-cnt;
+
+                console.log(cnt, remain);
+
+                if(remain<0){
+                    alert('최대 글자수를 초과했습니다.');
+                    var str = $(this).val().substr(0,150);
+                    $(this).val(str);
+                    $('span').text('150');
+                    return false;
+                }
+
+                //$('span').html(remain);
+                $('span').text(remain);
+            });
+
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+    <textarea cols="50" rows="10"></textarea>
+    <span>0</span>/150
+
+
+
+
+    <div id="wrap">
+        <h1>header</h1>
+    </div>
+</body>
+</html>
