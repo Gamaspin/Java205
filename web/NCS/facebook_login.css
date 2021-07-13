@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table,
+input,
+header,
+nav,
+aside,
+section,
+article,
+p {
+  font-size: 16px;
+  font-family: "돋움체", Arial, Helvetica, sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+  margin-left: 20px;
+  font-size: 12px;
+  color: gray;
+  font-weight: 500;
+  display: block;
+  float: left;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: rgb(241, 237, 229);
+}
+/* #box {
+            height: 536px;
+            padding: 72px 0 112px 0;
+            background-color: #f6f6f6;
+
+        } */
+
+/* div.box {
+            width: 500px;
+            height: 500px;
+
+            position: relative;
+        } */
+
+#box {
+  padding: 5px 20px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  /* width: 800px; 
+            height: 600px; 
+            margin-left: -320px; 
+            margin-top : -170px;  */
+  transform: translate(-50%, -50%);
+}
+
+#left_box {
+  padding: 20px;
+  position: absolute;
+  right: 50%;
+  text-align: left;
+}
+
+#right_box {
+  padding: 20px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  height: 300px;
+  width: 500px;
+}
+
+#useremail {
+  direction: ltr;
+  height: 48px;
+  width: 90%;
+  margin: 10px 0 0 30px;
+  line-height: 16px;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+#password {
+  direction: ltr;
+  height: 48px;
+  width: 90%;
+  margin: 10px 0 0 30px;
+  line-height: 16px;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.loginBtn {
+  height: 48px;
+  width: 90%;
+  margin: 30px 30px 10px 30px;
+  color: white;
+  background-color: #4267b2;
+  border: 1px solid #4267b2;
+  border-radius: 7px;
+}
+
+.findPw {
+  display: block;
+  padding: -10px 0 30px 20px;
+  text-align: center;
+  color: #4267b2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  border-bottom: 1px solid #dddfe2;
+  padding: 0 0 10px 0;
+}
+
+.makeAccountBtn {
+  height: 48px;
+  width: 30%;
+  background-color: #42b72a;
+  border: 1px solid #42b72a;
+  border-radius: 5px;
+  color: white;
+  font-weight: bolder;
+  margin: 15px 35%;
+}
+
+.more_page > h4 {
+  text-align: center;
+  margin: 15px 20px;
+  font-size: 13px;
+}
+
+.more_page > span {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/*푸터*/
+footer {
+  position: absolute;
+  bottom: 10px;
+  height: 60px;
+  padding-top: 30px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#lang_sel {
+  display: flex;
+  margin: 0;
+  padding: 0 0 15px;
+  border-bottom: 1px solid #dddfe2;
+  height: 15px;
+  text-align: center;
+  line-height: 15px;
+  border-bottom: 1px solid #dddfe2;
+  font-size: 6px;
+}
+
+#lang_sel > ul > li {
+  float: left;
+  /* padding: 0 20px; */
+  height: 15px;
+  line-height: 15px;
+  list-style: none;
+}
+
+#lang_sel > ul > li > a {
+  display: block;
+  padding: 0 10px;
+}
+
+#menu_sel {
+  float: left;
+  padding: 0 20px;
+  height: 15px;
+  line-height: 15px;
+  list-style: none;
+  display: block;
+  font-size: 15px;
+}

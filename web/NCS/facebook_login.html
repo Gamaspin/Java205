@@ -1,177 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facebook Log-in</title>
-<style>
-* {
-    margin: 0;
-    padding: 0;
-}
-ul, li {
-    list-style: none;
-}
-html, body, div, h1, h2, h3, h4, h5, h6,
-table, input, 
-header, nav, aside, section, article,
-p  {
-    font-size: 16px;
-    font-family: '돋움체',Arial, Helvetica, sans-serif;
-}
-body {
-    background-color: rgb(241, 237, 229);
-}
-/* div.box {
-            width: 500px;
-            height: 500px;
-
-            position: relative;
-        } */
-
-#box {
-    padding: 5px 20px; 
-    position: absolute; 
-    top: 30%; 
-    left: 50%; 
-    /* width: 800px; 
-    height: 600px; 
-    margin-left: -320px; 
-    margin-top : -170px;  */
-    transform: translate(-50%,-50%);
-
-}
-#left_box {
-    padding: 20px;
-    position: absolute;
-    right: 50%;
-    text-align: left;
-
-}
-
-#right_box {
-    padding: 20px;
-    background-color: white;
-    position: absolute;
-    left: 50%;
-    height: 300px;
-    width: 500px;
-
-}
-
-/* form>input[type=email] {
-    width: 100px;
-    height: 24px;
-    margin-top: 4px;
-    padding: 0 10px;
-    border : 1px solid #AAA;
-
-} */
-
-/*footer*/
-.footer { 
-    padding-top:30px;
-}
-.footer.lang_sel {
-    display:flex;
-    margin:0;
-    padding:0 0 15px;
-    border-bottom:1px solid #d3d3d3
-}
-
-
-footer {
-    max-width:980px;
-    width:100%;
-    margin:0 auto;
-}
-footer.lang_sel {
-    height: 15px;
-    text-align: center;
-    line-height: 15px;
-    border-top: 1px solid rgb(255, 0, 0);
-    border-bottom: 1px solid rgb(255, 0, 0);
-    font-size: 6px;
-    /* float: inline-end;
-    overflow: hidden; */
-}
-footer.lang_sel>ul {
-    float: left;
-
-    overflow: hidden;
-
-    list-style: none;
-}
-footer.lang_sel>ul>li {
-    float: left;
-    /* padding: 0 20px; */
-    height: 15px;
-    line-height: 15px;
-}
-footer.lang_sel>ul>li>a {
-    display: block;
-    padding: 0 10px;
-} */
-
-</style>
-
-
+    <link rel="stylesheet" href="../NCS/facebook_login.css">
 </head>
+
 <body>
     <div id="box" class="box">
         <div id="left_box" class="box">
+            <!-- 로고 영역 -->
             <section class="left_section">
-            
-                    <img src="../images/facebook_logo_300_83.png" alt="FACEBOOK">
-                    <p>
+
+                <img src="../images/facebook_logo_300_83.png" alt="FACEBOOK">
+                <p>
                     Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.
-                    </p>
-                
+                </p>
             </section>
         </div>
+
+        <!-- 로그인 정보 입력 영역 -->
         <div id="right_box" class="box">
             <form class="right_section">
-                
-                <input type="email" id="useremail" placeholder="이메일 또는 전화번호">
-                <input type="password" id="password" placeholder="비밀번호">
-                <input type="submit" class="submit" value="로그인">
-                <a href="a">비밀번호를 잊으셨나요?</a>
+                <div class="id">
+                    <input type="email" id="useremail" placeholder="이메일 또는 전화번호">
+                </div>
+                <div class="pw">
+                    <input type="password" id="password" placeholder="비밀번호">
+                </div>
+                <input type="button" class="loginBtn" value="로그인">
+                <a href="#" class="findPw">비밀번호를 잊으셨나요?</a>
                 <hr>
-                <input type="submit" value="새 계정 만들기">
+                <input type="submit" class="makeAccountBtn" value="새 계정 만들기">
+
 
             </form>
-            <p>유명인, 밴드, 비즈니스를 위한 <a href="a">페이지 만들기</a></p>
+            <div class="more_page">
+                <h4>유명인, 밴드, 비즈니스를 위한 <span><a href="a">페이지 만들기</a></span></h4>
+            </div>
         </div>
     </div>
 
-        <footer>
-            <div>
-                <div id="lang_sel" class="select">
-                    <ul>
-                        <li><a href="#">한국어</a></li>
-                        <li><a href="#">English (US)</a></li>
-                        <li><a href="#">Tiếng Việt</a></li>
-                        <li><a href="#">Bahasa Indonesia</a></li>
-                        <li><a href="#">ภาษาไทย</a></li>
-                        <li><a href="#">Español</a></li>
-                        <li><a href="#">中文(简体)</a></li>
-                        <li><a href="#">日本語</a></li>
-                        <li><a href="#">Português (Brasil)</a></li>
-                        <li><a href="#">Français (France)</a></li>
-                        <li><a href="#">Deutsch</a></li>
-                    </ul>
-                </div>
-                <hr>
-
-                <div id="menu_sel" class="select">
-                    가입하기
-
-
-                </div>
-
+    <!-- 푸터 영역 -->
+    <footer>
+        <div>
+            <div id="lang_sel" class="select">
+                <ul>
+                    <li><a href="#">한국어</a></li>
+                    <li><a href="#">English (US)</a></li>
+                    <li><a href="#">Tiếng Việt</a></li>
+                    <li><a href="#">Bahasa Indonesia</a></li>
+                    <li><a href="#">ภาษาไทย</a></li>
+                    <li><a href="#">Español</a></li>
+                    <li><a href="#">中文(简体)</a></li>
+                    <li><a href="#">日本語</a></li>
+                    <li><a href="#">Português (Brasil)</a></li>
+                    <li><a href="#">Français (France)</a></li>
+                    <li><a href="#">Deutsch</a></li>
+                </ul>
             </div>
-        </footer>
-    
+            <hr>
+
+            <div id="menu_sel" class="select">
+                <li>가입하기</li>
+                <li>로그인</li>
+                <li>Messenger</li>
+                <li>Facebook Lite</li>
+                <li>Watch</li>
+                <li>사람</li>
+                <li> 페이지</li>
+                <li> 페이지 카테고리</li>
+                <li>장소</li>
+                <li>게임</li>
+                <li>위치</li>
+                <li>Marketplace</li>
+                <li>Facebook Pay</li>
+                <li>그룹</li>
+                <li>채용 정보</li>
+                <li>Oculus</li>
+                <li>Portal</li>
+                <li>Instagram</li>
+                <li>지역</li>
+                <li>기부 캠페인</li>
+                <li>서비스</li>
+                <li>투표 정보 센터</li>
+                <li>정보</li>
+                <li>광고 만들기</li>
+                <li>페이지 만들기</li>
+                <li>개발자</li>
+                <li>채용 정보</li>
+                <li> 개인정보처리방침</li>
+                <li>쿠키</li>
+                <li>AdChoices</li>
+                <li>이용 약관</li>
+                <li>고객 센터</li>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
