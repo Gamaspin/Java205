@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+/* 전체 일괄 설정 */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(224, 224, 224);
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h6,
+p,
+header,
+div,
+footer {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 메인을 감싸는 블록 */
+#main_wrap {
+  width: 500px;
+  height: 1200px;
+  padding-top: 80px;
+  padding-left: 15px;
+  margin: 0 auto;
+}
+
+/* 입력 칸 선택시 테두리 색 설정 */
+input:focus {
+  outline-color: rgb(0, 185, 75);
+}
+
+/* 긴 블록 input 설정 */
+.block_L {
+  width: 460px;
+  height: 45px;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+/* 짧은 블록 input 설정 */
+.block_S {
+  width: 139px;
+  height: 45px;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  margin-right: 5px;
+}
+
+/*헤더설정*/
+header > h1 {
+  font-size: 64px;
+  color: rgb(0, 185, 75);
+  text-align: center;
+  margin-bottom: 15px;
+}
+header > h1 > a {
+  color: rgb(0, 185, 75);
+  text-decoration: none;
+}
+
+/* 아이디 */
+#id {
+  width: 330px;
+  height: 45px;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+.step_url {
+  float: right;
+  color: #8e8e8e;
+  margin: 19px 33px;
+  border: 1px solid #ddd;
+  background-color: #ddd;
+}
+/*id입력박스 테두리 제거*/
+#id:focus {
+  outline: none;
+}
+
+/* 전화번호 입력칸 크기 설정 */
+#tel_num {
+  width: 330px;
+  height: 45px;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+/* 전화번호 인증번호받기 버튼 설정 */
+.check_Btn {
+  width: 115px;
+  height: 48px;
+  color: white;
+  background-color: rgb(66, 190, 103);
+  border-left: -2px;
+  border: 1px solid #ddd;
+}
+
+/* 가입하기 버튼 설정 */
+.signup_Btn {
+  color: white;
+  background-color: rgb(66, 190, 103);
+  width: 480px;
+  height: 45px;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+/* 라벨 설정 */
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+/* footer 설정 */
+footer {
+  text-align: center;
+  font-size: 0.7em;
+  color: rgb(128, 128, 128);
+}
+footer > a {
+  text-decoration: none;
+  color: rgb(128, 128, 128);
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px;
+}

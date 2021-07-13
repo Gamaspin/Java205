@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naver_Join</title>
+    <link rel="stylesheet" href="../NCS/naver_join.css">
+
+
+
+
+</head>
+
+<body>
+    <div id="main_wrap">
+        <header>
+            <h1><a href="http://www.naver.com">NAVER</a></h1>
+        </header>
+
+        <div class="join_content">
+            <!-- 아이디 입력 -->
+            <span class=input_id>
+                <label for="id">아이디</label>
+                <input type="text" id="id" maxlength="20">
+            </span>
+            <span class="step_url">@naver.com</span>
+
+            <!-- 비밀번호 입력 -->
+            <div class=input_pw>
+                <label for="pw">비밀번호</label>
+                <input type="password" id="pw" class="block_L">
+
+                <label for="pw2">비밀번호 재확인</label>
+                <input type="password" id="pw2" class="block_L">
+            </div>
+
+            <!-- 이름 입력 -->
+            <label for="name">이름</label>
+            <input type="text" id="name" class="block_L">
+
+            <!-- 생년일 입력 및 생월 선택 -->
+            <label for="birthYear">생년월일</label>
+            <div class="birthInfo">
+                <input type="text" id="birthYear" class="block_S" placeholder="년(4자)">
+                <select name="birthmonth" class="block_S">
+                    <option value="">월</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <input type="text" name="birthday" class="block_S" placeholder="일">
+            </div>
+
+            <!-- 성별 선택 -->
+            <label for="gender">성별</label>
+            <select id="gender" class="block_L">
+                <option value="">성별</option>
+                <option value="남성">남자</option>
+                <option value="여성">여자</option>
+                <option value="선택안함">선택안함</option>
+            </select>
+
+            <!-- 이메일 입력 -->
+            <label for="email">본인 확인 이메일 <span>(선택)</span></label>
+            <input type="text" id="email" class="block_L" placeholder="선택입력">
+
+            <!-- 휴대전화 입력 -->
+            <label for="phoneNo">휴대전화</label>
+            <select id="phoneNo" class="block_L">
+                <option value="4" selected>대한민국+82</option>
+                <option value="미국">미국+1</option>
+                <option value="일본">일본+81</option>
+                <option value="중국">중국+86</option>
+            </select>
+
+
+            <input type="tel" name="tel" id="tel_num" placeholder="전화번호 입력">
+            <input type="submit" name="signup" class="check_Btn" value="인증번호 받기">
+            <input type="text" class="block_L" placeholder="인증번호 입력하세요">
+            <input type="submit" name="signup" class="signup_Btn" value="가입하기">
+
+
+        </div>
+        <footer>
+            <ul>
+                <a href="#">이용약관</a>
+                ㅣ
+                <a href="#">개인정보처리방침</a>
+                ㅣ
+                <a href="#">책임의 한계와 법적고지</a>
+                ㅣ
+                <a href="#">회원정보 고객센터</a>
+            </ul>
+            <a href="https://www.navercorps.com">NAVER Corp.</a>
+        </footer>
+    </div>
+</body>
+
+</html>
