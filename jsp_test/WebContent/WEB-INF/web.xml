@@ -9,4 +9,16 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+
+
+<!-- @WebServlet("/now2")  <-- 어노테이션으로 대체 가능 -->
+<!--  <servlet>
+    <servlet-name>nowServlet</servlet-name>
+    <servlet-class>jsp_test.NowServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>nowServlet</servlet-name>
+    <url-pattern>/now</url-pattern>
+  </servlet-mapping>
+ --> 
 </web-app>
