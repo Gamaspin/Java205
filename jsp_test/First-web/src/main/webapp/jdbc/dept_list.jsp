@@ -1,3 +1,4 @@
+<%@page import="jdbc.util.ConnectionProvider"%>
 <%@page import="dept.domain.Dept"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -21,12 +22,19 @@
 	Statement stmt = null;
 	ResultSet rs = null;
 	
-		// jdbcUrl
-	String jdbcUrl = "jdbc:mysql://localhost:3306/project?serverTimeZone=UTC";
-	String user = "bit";
-	String pw = "bit";
 	
-	conn = DriverManager.getConnection(jdbcUrl, user, pw);
+	
+		// jdbcUrl
+	conn = ConnectionProvider.getConnection();
+		
+		
+	//String jdbcUrl = "jdbc:mysql://localhost:3306/project?serverTimeZone=UTC";
+	//String user = "bit";
+	//String pw = "bit";
+	
+	//conn = DriverManager.getConnection(jdbcUrl, user, pw);
+
+	
 	
 	
 	// 3. Statement 객체 생성

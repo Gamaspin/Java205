@@ -42,6 +42,7 @@
 				<td>
 					<input type="submit" value="등록"> 
 					<input type="reset">
+					<input type="button" onclick="location.href='dept_list.jsp'" value="뒤로가기">
 				</td>
 			</tr>
 		</table>
