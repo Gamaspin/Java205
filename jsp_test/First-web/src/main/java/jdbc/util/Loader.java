@@ -16,7 +16,5 @@ public class Loader extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로드 실패!");
 		}
-
 	}
-
 }
