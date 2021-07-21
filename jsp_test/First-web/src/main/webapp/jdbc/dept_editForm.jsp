@@ -1,3 +1,5 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="dept.dao.DeptDao"%>
 <%@page import="jdbc.util.ConnectionProvider"%>
 <%@page import="dept.domain.Dept"%>
 <%@page import="java.sql.DriverManager"%>
@@ -20,36 +22,18 @@
 	
 		// 2. DB 연결
 	Connection conn = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs = null;
+	DeptDao dao = null;	
 	
-	conn = ConnectionProvider.getConnection();
-
-	Dept dept = null;
-	
-	String sqlSelect = "select * from dept where deptno=?";
-	pstmt = conn.prepareStatement(sqlSelect);
-	pstmt.setInt(1, Integer.parseInt(deptno));
-	
-	rs = pstmt.executeQuery();
-	
-	
-	//while을 안쓰는 이유 = pk라서 반복할 필요가 없음
-	if(rs.next()){
-		dept = new Dept();
-		dept.setDeptno(rs.getInt("deptno"));
-		dept.setDname(rs.getString("dname"));
-		dept.setLoc(rs.getString("loc"));
+	try{
+		conn = ConnectionProvider.getConnection();
+		dao = DeptDao.getInstance();
+		
+		// 부서정보를 form_view.jsp 전달(공유)
+		request.setAttribute("dept", dao.selectByDeptno(conn, Integer.parseInt(deptno)));
+		
+	} catch (SQLException e ){
+		e.printStackTrace();
 	}
-	
-		//out.println(dept);
-
-
-	// 부서정보를 form_view.jsp로 전달(공유)
-	request.setAttribute("dept", dept);
-
-
 %>
 
 <jsp:forward page="form_view.jsp" /> 
-
