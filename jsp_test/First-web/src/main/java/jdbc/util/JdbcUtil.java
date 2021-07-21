@@ -18,7 +18,6 @@ public class JdbcUtil {
 				e.printStackTrace();
 			}
 		}
-
 	}
 
 	// Statement, PreparedStatement
@@ -44,6 +43,4 @@ public class JdbcUtil {
 			}
 		}
 	}
-	
-
 }
