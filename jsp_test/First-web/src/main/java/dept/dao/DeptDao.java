@@ -11,54 +11,59 @@ import dept.domain.Dept;
 import jdbc.util.JdbcUtil;
 
 public class DeptDao {
-
-	public List<Dept> getDeptList(Connection conn) {
-
+	
+	
+	// 싱글톤 패턴
+		// 1. 인스턴스의 추가적인 생성을 막음
+		private DeptDao() {}
+		
+		// 2. 클래스 내부에서 인스턴스를 생성
+		static private DeptDao dao = new DeptDao();
+		
+		// 3. 외부에서 참조값을 반환받을 수 있는 메소드 생성
+		public static DeptDao getInstance() {
+			return dao==null? new DeptDao(): dao;
+					//삼항연산자사용 -> null이라면 new DeptDao(), 아니라면 dao
+		}
+	
+	
+	
+	
+	
+	public List<Dept> getDeptList(Connection conn){
+		
 		Statement stmt = null;
 		ResultSet rs = null;
-
-		List<Dept> deptList = new ArrayList()<Dept>();
+		
+		List<Dept> list = null;
+		
 		
 		try {
-			// 3. Statement 객체 생성
 			stmt = conn.createStatement();
-
-			// sql
-			String sqlSelect = "select * from dept";
-
-
-			// 4. ResultSet
-			rs = stmt.executeQuery(sqlSelect);
-
-
-			// 5. List<Dept>	<- 결과
+			String sql = "select * from dept";
+			rs = stmt.executeQuery(sql);
+			list = new ArrayList<Dept>();
 			
-
 			while(rs.next()) {
-				// List에 객체 추가
-				deptList.add(
-						new Dept(
-								rs.getInt("deptno"), 
-								rs.getString("dname"), 
-								rs.getString("loc")
-								)
-						);
+				list.add(new Dept(rs.getInt(1), rs.getString(2), rs.getString(3)));
 			}
+			
+			
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			jdbcUtil.close(rs);
-			jdbcUtil.close(stmt);
+			JdbcUtil.close(rs);
+			JdbcUtil.close(stmt);
 		}
-
-		return list;
+		
 		
 
+		return list;
+
+
+		
 	}
 
-
-
-
-
-
 }
+

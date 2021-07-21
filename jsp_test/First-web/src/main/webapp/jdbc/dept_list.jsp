@@ -1,3 +1,5 @@
+<%@page import="jdbc.util.JdbcUtil"%>
+<%@page import="java.sql.SQLException"%>
 <%@page import="dept.dao.DeptDao"%>
 <%@page import="jdbc.util.ConnectionProvider"%>
 <%@page import="java.util.ArrayList"%>
@@ -22,26 +24,43 @@
 	Connection conn = null;
 	//Statement stmt = null;
 	//ResultSet rs = null;
-	DeptDao dao = new DeptDao();
+			//DeptDao dao = new DeptDao();
+			DeptDao dao = DeptDao.getInstance();
 	
-	
+			
+	try {
 		// jdbcUrl
-	conn = ConnectionProvider.getConnection();
+		conn = ConnectionProvider.getConnection();
 		
 		
-	//String jdbcUrl = "jdbc:mysql://localhost:3306/project?serverTimeZone=UTC";
-	//String user = "bit";
-	//String pw = "bit";
+		//String jdbcUrl = "jdbc:mysql://localhost:3306/project?serverTimeZone=UTC";
+		//String user = "bit";
+		//String pw = "bit";
+		
+		//conn = DriverManager.getConnection(jdbcUrl, user, pw);
+		
+		// 6. 결과데이터를 request의 속성에 저장	-> 데이터의 공유(전달)
+		request.setAttribute("result", dao.getDeptList(conn));
+		
+	} catch(SQLException e) {
+		e.printStackTrace();
+	} catch(NullPointerException e) {	// conn이 null일수도 있어서
+		e.printStackTrace();
+	} catch(Exception e) {
+		e.printStackTrace();
+	} finally {
+		JdbcUtil.close(conn);
+	}
+		
+		
 	
-	//conn = DriverManager.getConnection(jdbcUrl, user, pw);
 
 	
 	
 	
 
 
-	// 6. 결과데이터를 request의 속성에 저장	-> 데이터의 공유(전달)
-	request.setAttribute("result", dao.getDeptList(conn));
+	
 	
 %>
 
