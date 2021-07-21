@@ -20,7 +20,7 @@
 	// 2. DB 처리 : insert
 	
 	// 데이터베이스 드라이버 로드
-	Class.forName("com.mysql.cj.jdbc.Driver");
+	//Class.forName("com.mysql.cj.jdbc.Driver");
 	
 	// 연결
 	Connection conn = null;
