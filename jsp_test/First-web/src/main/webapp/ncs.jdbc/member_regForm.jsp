@@ -62,7 +62,7 @@ window.onload= function(){
 <body>
 	<h1>회원 등록</h1>
 	<hr>
-	<a href="member_list.jsp"><button>홈으로 돌아가기</button></a>
+	<a href="<%= request.getContextPath() %>/new/index.jsp"><button>홈으로 돌아가기</button></a>
 	<hr>
 	<form id="regForm" action="regMember.jsp" method="post">
 		<table border="1">

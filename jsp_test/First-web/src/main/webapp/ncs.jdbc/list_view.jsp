@@ -22,7 +22,8 @@
 	<h1>회원 리스트</h1>
 	<hr>
 	
-	<button onclick="location.href='member_regForm.jsp'">회원 등록</button>
+	<!-- <button onclick="location.href='member_regForm.jsp'">회원 등록</button> -->
+	<a href="<%= request.getContextPath() %>/new/index.jsp"><button>홈으로 돌아가기</button></a>
 	<table border=1>
 		<tr>
 			<th>회원 아이디</th>

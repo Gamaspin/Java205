@@ -55,9 +55,20 @@ public class Member {
 	public void setRegDate(Timestamp regDate) {
 		this.regDate = regDate;
 	}
+	
+	// java.sql.TimeStamp -> java.util.Date
+	public Date getDate() {
+		return new Date(getRegDate().getTime());
+	}
 
 	@Override
 	public String toString() {
 	return "Member [id=" + id + ", pw=" + pw+ ", name=" + name + ", regDate=" + regDate + "]";
+	}
+	
+
+	// Member 클래스를 LoginInfo 로 반환하는 메소드 생성
+	public LoginInfo toLoginInfo() {
+		return new LoginInfo(this.idx, this.id, this.name);
 	}
 }
