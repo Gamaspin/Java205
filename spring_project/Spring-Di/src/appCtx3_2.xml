@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- MemberRegService bean 등록. 디폴트 설정도 해줘야함. MemberDao가 주입됨-->
+	<!-- 인스턴스 생성 후 setter 메소드 호출(실행) -->
+	<bean id="regService"
+			class="member.service.MemberRegService"
+			p:dao-ref="memberDao">
+		
+		<!-- <property name="dao">
+			<ref bean="memberDao"/>		
+		</property> -->
+		
+	</bean>
+		
+	<!-- ChangePasswordService bean 등록. 디폴트 설정도 해줘야함-->
+	<bean id="changePwService"
+			class="member.service.ChangePasswordService"
+			p:dao-ref="memberDao">
+		<!-- <property name="dao" ref="memberDao"/> -->
+	</bean>
+	
+</beans>
