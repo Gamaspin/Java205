@@ -24,7 +24,14 @@
 		<li><a href="<c:url value="/search/search"/>">/search/search</a></li>
 		
 		<li><a href="<c:url value="/upload/uploadForm"/>">/upload/uploadForm</a></li>
-	
+		
+		<li><a href="<c:url value="/member/mypage/cool"/>">/member/mypage/cool</a></li>
+		<li><a href="<c:url value="/member/mypage/hot"/>">/member/mypage/hot</a></li>
+		<li><a href="<c:url value="/member/mypage?uid=king"/>">/member/mypage/king</a></li>
+		<li><a href="<c:url value="/member/mypage/scott"/>">/member/mypage/scott</a></li>
+		<li><a href="<c:url value="/error/error"/>">/error/error</a></li>
+		
+		
 	</ul>
 </body>
 </html>
