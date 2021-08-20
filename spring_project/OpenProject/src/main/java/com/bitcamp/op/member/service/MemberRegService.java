@@ -2,24 +2,21 @@ package com.bitcamp.op.member.service;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bitcamp.op.jdbc.ConnectionProvider;
-import com.bitcamp.op.jdbc.JdbcUtil;
 import com.bitcamp.op.member.dao.Dao;
-import com.bitcamp.op.member.dao.JdbcTemplateMemberDao;
-import com.bitcamp.op.member.dao.MemberDao;
-import com.bitcamp.op.member.dao.MybatisMemberDao;
 import com.bitcamp.op.member.domain.Member;
 import com.bitcamp.op.member.domain.MemberRegRequest;
+import com.bitcamp.op.util.AES256Util;
+import com.bitcamp.op.util.Sha256;
 
 @Service
 public class MemberRegService {
@@ -39,6 +36,32 @@ public class MemberRegService {
 	
 	@Autowired
 	private SqlSessionTemplate template;
+	
+	
+	
+
+	@Autowired
+	private MailSenderService mailSenderService;
+	
+	
+	
+	
+	
+	
+	
+	
+
+	@Autowired
+	private Sha256 sha256;
+	
+	@Autowired
+	private AES256Util aes256Util; 
+	
+	@Autowired
+	private BCryptPasswordEncoder cryptPasswordEncoder; 
+	
+	
+	
 
 	public int memberReg(MemberRegRequest regRequest, HttpServletRequest request) {
 
@@ -66,7 +89,7 @@ public class MemberRegService {
 				// 파일 저장시에 파일 이름이 같으면 덮어쓴다 -> 회원별 고유한 파일 이름을 만들자!!, 새로운 파일이름에 확장자 추가
 				String newFileName = regRequest.getMemberid() 
 						+ System.currentTimeMillis()
-						+ "." + chkFileType(regRequest.getPhoto());
+						+ "."+chkFileType(regRequest.getPhoto());
 				// cool123128936798123987
 
 				// 새로운 File 객체
@@ -78,6 +101,43 @@ public class MemberRegService {
 				member.setMemberphoto("photo.png");
 			}
 
+			//////////////////////////////////////////////////////////////////////////
+			//  암호화 처리 코드
+			//////////////////////////////////////////////////////////////////////////
+			
+			System.out.println("암호화 : " + sha256.encrypt(member.getPassword()) );
+			
+			// AES256 으로 암호화된 문자열 : insert or update
+			String epw = aes256Util.encrypt(member.getPassword());
+			// AES256으로 복호화된 문자열 : select
+			String ppw = aes256Util.decrypt(epw);
+			System.out.println("---------------------");
+			System.out.println("AES256 으로 암호화된 문자열");
+			System.out.println(epw);
+			System.out.println("AES256으로 복호화된 문자열");
+			System.out.println(ppw);
+			
+			System.out.println("--------------------------");
+			System.out.println("Spring Security BCryptPasswordEncoder 이용한 암호화");
+			String securityPw = cryptPasswordEncoder.encode(member.getPassword());
+			System.out.println(securityPw);
+			System.out.println("비밀번호 비교 메소드 : matches");
+			System.out.println(cryptPasswordEncoder.matches("111", securityPw));
+			System.out.println(cryptPasswordEncoder.matches(member.getPassword(), securityPw));
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			// 2. dao 저장
 			// conn = ConnectionProvider.getConnection();
 			
@@ -90,6 +150,11 @@ public class MemberRegService {
 			// idx 값은 자식 테이블의 insert 시 외래키로 사용
 
 			// 자식테이블 insert 구문....
+			
+			
+			int mailsendCnt = mailSenderService.send(member);
+			System.out.println("메일 발송 처리 횟수 : " + mailsendCnt);
+			
 
 		} catch (IllegalStateException | IOException e) {
 			e.printStackTrace();
