@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<id column="idx" property="idx"/>
 		<result column="memberid" property="memberid"/>
 		<result column="membername" property="membername"/>
-		<result column="password" property="password"/>
+		<!-- <result column="password" property="password"/> -->
 		<result column="memberphoto" property="memberphoto"/>
 		<result column="regdate" property="regdate"/>
 	</resultMap>
@@ -122,6 +122,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	</select>
+	
+	
+	
 	<sql id="searchId">
 		or memberid like concat('%', #{keyword},'%')
 	</sql>
@@ -129,6 +132,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<sql id="searchName">
 		or membername like concat('%', #{keyword},'%')
 	</sql>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
