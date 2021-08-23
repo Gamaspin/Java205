@@ -51,12 +51,12 @@ public class MemberRestController {
 	}
 	@GetMapping("/members")
 	@CrossOrigin
-	public List<Member> getMembers(){
+	public List<Member> getMembers() {
 		return restService.getMembers();
 	}
 	
 	@GetMapping("/members1")
-	public Map<Integer, Member> getMembers1(){
+	public Map<Integer, Member> getMembers1() {
 		
 		return restService.getMembers1();
 	}
