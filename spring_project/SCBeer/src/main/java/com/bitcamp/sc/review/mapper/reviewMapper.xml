@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+    <!-- 01. 게시글 전체 목록 조회 -->
+    <select id="listAll" resultType="com.bitcamp.sc.review.model.ReviewVO">
+        SELECT 
+            ridx, rtitle, rtext, pidx, rdate, viewcnt 
+        FROM 
+            review
+        ORDER BY 
+            ridx desc, rdate desc
+    </select>
+    <!-- 02. 게시글 작성 -->
+    <insert id="insert">
+        INSERT INTO review (
+          ridx, rtitle, rtext, pidx
+        ) VALUES (
+          (SELECT NVL(MAX(ridx)+1, 1)FROM review),
+          #{rtitle},
+          #{rtext},
+          #{pidx}
+        )
+    </insert>
+    <!--03. 게시글 상세보기 조회 -->
+    <select id="view" resultType="com.bitcamp.sc.review.model.ReviewVO">
+        SELECT * FROM review 
+        WHERE ridx = #{ridx}
+    </select>
+    <!-- 04. 게시글 조회수 증가처리 -->
+    <update id="increaseViewcnt">
+        UPDATE review SET viewcnt = viewcnt + 1 
+        WHERE ridx = #{ridx}
+    </update>
+    <!-- 05. 게시글 수정처리 -->
+    <update id="updateArticle">
+        UPDATE review SET
+            rtitle = #{rtitle},
+            rtext = #{rtext},
+            pidx = #{pidx}
+        WHERE ridx = #{ridx}
+    </update>
+    <!-- 06. 게시글 삭제처리 -->
+    <delete id="deleteArticle">
+        DELETE FROM review
+        WHERE ridx = #{ridx}
+    </delete>
+</mapper>
